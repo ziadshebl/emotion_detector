@@ -1,6 +1,5 @@
 import cv2
 class FaceDetector:
-    
 
     #option = 0 ===> Use pretrained weights model
     def initialize_models(self, option):
