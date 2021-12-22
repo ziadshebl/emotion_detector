@@ -22,7 +22,7 @@ class DatasetReader():
           
             expressionID = image_name.split("_")[0]
             x_train.append(cv2.imread(image))
-            y_train.append(expressionID)
+            y_train.append(int(expressionID))
         
         return x_train, y_train
 

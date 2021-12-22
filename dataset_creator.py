@@ -52,19 +52,15 @@ class DatasetCreator:
                 surprise_dataset.append(images[int(len(images)/2)])
 
         #TODO: Add in this list the emotions you want to include in the creatd dataset
-        all_dataset = [surprise_dataset, happiness_dataset, sadness_dataset, fear_dataset]
+        all_dataset = [surprise_dataset, happiness_dataset, sadness_dataset]
         for index, category in zip(range(len(all_dataset)), all_dataset):
             print("Category")
             print(len(category))
             for index2, item in zip(range(len(category)),category):
                 #TODO: Change the path to a folder path you want to save the data in
                 #Create the folder first
-                copyfile(item, "C:/Users/Ziadkamal/Desktop/Senior-2/Image Processing/Project/CreatedDataset4-2/"+str(index)+"_"+str(index2)+".jpg")
+                copyfile(item, "C:/Users/Ziadkamal/Desktop/Senior-2/Image Processing/Project/CreatedDataset3/"+str(index)+"_"+str(index2)+".jpg")
         
-        
-            
-        
-
-
-
+                
+    
 DatasetCreator.create_dataset()

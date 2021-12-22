@@ -58,7 +58,7 @@ while True:
         points2 = []
         if(len(points)>0):
             points = np.array(points, dtype=np.int32)
-            points2 = [points[18],points[20],points[23], points[25], points[48], points[51], points[54], points[57], points[29]]
+            points2 = [points[17],points[21],points[22], points[26], points[48], points[51], points[54], points[57], points[30]]
             for p in points2:
                 cv2.circle(frame, (p[0], p[1]), 5, (255,0,0), thickness=2)
         
