@@ -1,14 +1,11 @@
 import numpy as np
 class LBPFeatureExtractor:
     @staticmethod
-    def get_pixel(img, center, x, y):
-        
+    def get_pixel(img, center, x, y):   
         new_value = 0
-        
         try:
             if img[x][y] >= center:
-                new_value = 1
-                
+                new_value = 1       
         except:
             pass
         
@@ -18,7 +15,6 @@ class LBPFeatureExtractor:
     def lbp_calculated_pixel(img, x, y):
     
         center = img[x][y]
-    
         val_ar = []
         
         # top_left
