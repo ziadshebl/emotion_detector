@@ -48,6 +48,7 @@ class EmotionDetector:
             emotion, score = self.detector.top_emotion(frame)   
             return emotion, score  
 
+   
     def calculate_trianglular_features(self,points):
         p_e1 = points[0]
         p_e3 = points[1]

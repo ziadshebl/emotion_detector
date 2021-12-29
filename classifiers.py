@@ -27,7 +27,7 @@ class Classifier:
         self.clf = joblib.load(filename)
 
     def predict(self, x_test):
-        results = self.clf.predict_proba([x_test])
+        results = self.clf.predict_proba(x_test)
         return np.argmax(results),  np.amax(results)
 
     def calculate_score(self, y_test, y_predicted):
