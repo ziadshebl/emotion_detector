@@ -1,5 +1,6 @@
 import cv2
 import dlib
+import imutils
 import numpy as np
 from face_detector import FaceDetector
 from emotion_detector import EmotionDetector
@@ -11,7 +12,7 @@ from utilities import Utilities
 
 #Face Detection Initializtions
 face_detector = FaceDetector()
-face_haar_cascade = face_detector.initialize_models(option = 0)
+face_haar_cascade = face_detector.initialize_models(option = 1)
 
 
 #Emotion Detection Initializations
@@ -21,7 +22,7 @@ detector = emotion_detector.initialize_models(option = 1)
 
 #Face Points Detection Initializatiosn
 facial_points_detector = FacialPointsDetectors()
-facial_points_detector.initialize()
+facial_points_detector.initialize(0)
 
 #Camera Initializations
 cap=cv2.VideoCapture(0)
@@ -34,6 +35,7 @@ if not cap.isOpened():
 while True:
     #read frame by frame and get return whether there is a stream or not
     ret, frame=cap.read()
+    frame = imutils.resize(frame, width=512,height=512)
     
     #If no frames recieved, then break from the loop
     if not ret:
@@ -47,7 +49,7 @@ while True:
     
     #Draw Triangles around the faces detected
     for (x,y,w,h) in faces_detected:
-        cv2.rectangle(frame,(x,y), (x+w,y+h), (255,0,0), thickness=7)
+        cv2.rectangle(frame,(x,y), (x+w,y+h), (255,0,0), thickness=2)
         
         #Get the prediction of the model
         #predictions = EmotionDetector.predict_emotion(image_pixels, frame)

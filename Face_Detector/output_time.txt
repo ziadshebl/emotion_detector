@@ -1,0 +1,284 @@
+Mon Dec 27 19:12:03 2021    output.dat
+
+         25911873 function calls (25911827 primitive calls) in 158.645 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+ 12230617  119.183    0.000  119.183    0.000 d:\Fall 2021\Image Processing\Project\Viola and jones Trials\ViolaAndJones\Feature.py:18(compute)
+        1   25.043   25.043   25.043   25.043 {waitKey}
+ 12230617    6.770    0.000  125.954    0.000 d:\Fall 2021\Image Processing\Project\Viola and jones Trials\ViolaAndJones\Tree.py:8(compute)
+   583432    4.911    0.000  130.865    0.000 d:\Fall 2021\Image Processing\Project\Viola and jones Trials\ViolaAndJones\Stage.py:8(compute)
+        1    1.892    1.892  133.292  133.292 d:\Fall 2021\Image Processing\Project\Viola and jones Trials\ViolaAndJones\Detector.py:52(detect)
+      845    0.165    0.000    0.165    0.000 {method 'write' of '_io.TextIOWrapper' objects}
+    15147    0.154    0.000    0.156    0.000 {built-in method builtins.eval}
+   233382    0.076    0.000    0.076    0.000 {built-in method math.sqrt}
+   249884    0.067    0.000    0.095    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:321(<genexpr>)
+        1    0.059    0.059    0.059    0.059 {imshow}
+        1    0.051    0.051    0.051    0.051 {method '_parse_whole' of 'xml.etree.ElementTree.XMLParser' objects}
+     2490    0.028    0.000    0.123    0.000 {built-in method builtins.sum}
+   247394    0.028    0.000    0.028    0.000 {built-in method unicodedata.east_asian_width}
+      830    0.026    0.000    0.143    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:352(format_meter)
+        1    0.016    0.016    0.242    0.242 d:\Fall 2021\Image Processing\Project\Viola and jones Trials\ViolaAndJones\Detector.py:25(read_from_xml_file)
+     6595    0.014    0.000    0.019    0.000 {method 'format' of 'str' objects}
+     6383    0.010    0.000    0.097    0.000 d:\Fall 2021\Image Processing\Project\Viola and jones Trials\ViolaAndJones\Rect.py:2(__init__)
+      800    0.010    0.000    0.422    0.001 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:1183(update)
+      830    0.008    0.000    0.010    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:1421(format_dict)
+        1    0.008    0.008    0.008    0.008 {imread}
+     4815    0.008    0.000    0.008    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:233(__call__)
+     1660    0.005    0.000    0.007    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:214(_is_ascii)
+     2913    0.005    0.000    0.075    0.000 d:\Fall 2021\Image Processing\Project\Viola and jones Trials\ViolaAndJones\Feature.py:7(__init__)
+      860    0.005    0.000    0.182    0.000 D:\Anaconda\envs\pattern\lib\site-packages\colorama\ansitowin32.py:177(write_and_convert)
+      830    0.004    0.000    0.157    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:1137(__repr__)
+     1167    0.004    0.000    0.440    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:1147(__iter__)
+      860    0.004    0.000    0.006    0.000 D:\Anaconda\envs\pattern\lib\site-packages\colorama\ansitowin32.py:245(convert_osc)
+      830    0.004    0.000    0.403    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:1436(display)
+      815    0.004    0.000    0.413    0.001 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:1305(refresh)
+      830    0.004    0.000    0.005    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:187(__format__)
+     2490    0.004    0.000    0.004    0.000 {method 'sub' of 're.Pattern' objects}
+      860    0.004    0.000    0.171    0.000 D:\Anaconda\envs\pattern\lib\site-packages\colorama\ansitowin32.py:193(write_plain_text)
+      830    0.004    0.000    0.186    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:339(fp_write)
+        1    0.003    0.003    0.245    0.245 d:\Fall 2021\Image Processing\Project\Viola and jones Trials\ViolaAndJones\Detector.py:18(__init__)
+      875    0.003    0.000    0.007    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:107(release)
+        1    0.003    0.003    0.003    0.003 {cvtColor}
+      875    0.003    0.000    0.003    0.000 {method 'acquire' of '_multiprocessing.SemLock' objects}
+     2490    0.003    0.000    0.126    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:320(_text_width)
+      875    0.003    0.000    0.007    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:103(acquire)
+      875    0.003    0.000    0.003    0.000 {method 'release' of '_multiprocessing.SemLock' objects}
+      830    0.003    0.000    0.241    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:345(print_status)
+     1645    0.003    0.000    0.007    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:288(format_interval)
+     1675    0.003    0.000    0.003    0.000 {method 'flush' of '_io.TextIOWrapper' objects}
+     2490    0.002    0.000    0.132    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:324(disp_len)
+     1690    0.002    0.000    0.188    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:141(inner)
+      815    0.002    0.000    0.002    0.000 {built-in method now}
+     1720    0.002    0.000    0.002    0.000 {method 'finditer' of 're.Pattern' objects}
+      830    0.002    0.000    0.002    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:154(__init__)
+     6384    0.002    0.000    0.002    0.000 {method 'split' of 'str' objects}
+       15    0.002    0.000    0.002    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:238(_screen_shape_windows)
+    17430    0.002    0.000    0.002    0.000 {built-in method builtins.ord}
+      860    0.002    0.000    0.183    0.000 D:\Anaconda\envs\pattern\lib\site-packages\colorama\ansitowin32.py:160(write)
+    12242    0.001    0.000    0.001    0.000 {method 'append' of 'list' objects}
+        1    0.001    0.001    0.001    0.001 {integral2}
+      860    0.001    0.000    0.185    0.000 D:\Anaconda\envs\pattern\lib\site-packages\colorama\ansitowin32.py:40(write)
+      830    0.001    0.000    0.055    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:332(disp_trim)
+     3320    0.001    0.000    0.001    0.000 {built-in method time.time}
+     1660    0.001    0.000    0.001    0.000 {built-in method builtins.max}
+     4120    0.001    0.000    0.001    0.000 {built-in method builtins.divmod}
+      876    0.001    0.000    0.001    0.000 {method 'acquire' of '_thread.RLock' objects}
+     1745    0.001    0.000    0.001    0.000 {built-in method builtins.hasattr}
+        1    0.001    0.001  158.647  158.647 d:\Fall 2021\Image Processing\Project\Viola and jones Trials\ViolaAndJones\test.py:33(main)
+      830    0.001    0.000    0.001    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:57(__init__)
+     2913    0.001    0.000    0.001    0.000 d:\Fall 2021\Image Processing\Project\Viola and jones Trials\ViolaAndJones\Tree.py:5(__init__)
+        1    0.001    0.001    0.001    0.001 {resize}
+      830    0.001    0.000    0.001    0.000 {method 'update' of 'dict' objects}
+       15    0.001    0.000    0.011    0.001 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:839(__init__)
+        1    0.000    0.000    0.000    0.000 {built-in method io.open_code}
+     2567    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+      876    0.000    0.000    0.000    0.000 {method 'release' of '_thread.RLock' objects}
+      830    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:61(__format__)
+      830    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:168(colour)
+      860    0.000    0.000    0.000    0.000 {built-in method builtins.abs}
+        4    0.000    0.000    0.000    0.000 {method 'acquire' of '_thread.lock' objects}
+     1730    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+       22    0.000    0.000    0.013    0.001 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:1249(close)
+      830    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:164(colour)
+  202/157    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+       15    0.000    0.000    0.002    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:559(__new__)
+        3    0.000    0.000    0.000    0.000 {rectangle}
+        3    0.000    0.000    0.000    0.000 {built-in method nt.stat}
+       15    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:154(__init__)
+       15    0.000    0.000    0.001    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:582(_decr_instances)
+       15    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\ctypes\__init__.py:47(create_string_buffer)
+       45    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\_weakrefset.py:58(__iter__)
+      2/1    0.000    0.000  158.654  158.654 {built-in method builtins.exec}
+       15    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:575(_get_free_pos)
+        8    0.000    0.000    0.000    0.000 {built-in method builtins.__build_class__}
+        1    0.000    0.000    0.000    0.000 d:\Fall 2021\Image Processing\Project\Viola and jones Trials\ViolaAndJones\Detector.py:108(merge)
+       30    0.000    0.000    0.005    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:1266(fp_write)
+       45    0.000    0.000    0.000    0.000 {method 'remove' of 'set' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method marshal.loads}
+       15    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:207(_supports_unicode)
+        1    0.000    0.000    0.000    0.000 {built-in method io.open}
+       30    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\_weakrefset.py:20(__enter__)
+       45    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:101(wrapper_setattr)
+       60    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:114(__exit__)
+       60    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:111(__enter__)
+       19    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1017(_handle_fromlist)
+       16    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\_weakrefset.py:81(add)
+        1    0.000    0.000    0.000    0.000 {method 'read' of '_io.BufferedReader' objects}
+       30    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\_weakrefset.py:26(__exit__)
+       15    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:193(_is_utf)
+       46    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
+       45    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:228(__init__)
+        1    0.000    0.000    0.000    0.000 {built-in method _thread.start_new_thread}
+       45    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:163(__eq__)
+       15    0.000    0.000    0.000    0.000 {built-in method _struct.unpack}
+       15    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\_weakrefset.py:106(remove)
+       75    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\colorama\ansitowin32.py:28(__getattr__)
+       25    0.000    0.000    0.001    0.000 d:\Fall 2021\Image Processing\Project\Viola and jones Trials\ViolaAndJones\Stage.py:4(__init__)
+        1    0.000    0.000    0.051    0.051 D:\Anaconda\envs\pattern\lib\xml\etree\ElementTree.py:571(parse)
+       30    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:136(disable_on_exception)
+       15    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x00007FFC05DBB810}
+       14    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\_monitor.py:92(report)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:50(__init__)
+       30    0.000    0.000    0.000    0.000 {built-in method builtins.id}
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:64(<listcomp>)
+       30    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\_weakrefset.py:16(__init__)
+        1    0.000    0.000    0.051    0.051 D:\Anaconda\envs\pattern\lib\xml\etree\ElementTree.py:1192(parse)
+        1    0.000    0.000    0.000    0.000 {method 'close' of '_io.BufferedReader' objects}
+       15    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:329(status_printer)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:11(<module>)
+       15    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:105(__init__)
+       30    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:1144(__hash__)
+        1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap_external>:969(get_data)
+       30    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:1140(_comparable)
+       15    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:74(__eq__)
+       15    0.000    0.000    0.000    0.000 {built-in method utcfromtimestamp}
+       15    0.000    0.000    0.001    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:656(get_lock)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:360(Barrier)
+       30    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\_weakrefset.py:52(_commit_removals)
+       24    0.000    0.000    0.000    0.000 d:\Fall 2021\Image Processing\Project\Viola and jones Trials\ViolaAndJones\Rect.py:10(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:549(module_from_spec)
+        1    0.000    0.000    0.001    0.001 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:91(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1431(find_spec)
+       15    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:578(<genexpr>)
+        1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap_external>:849(get_code)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\tempfile.py:133(rng)
+        1    0.000    0.000    0.000    0.000 {function Random.seed at 0x0000015F9CEC8DC0}
+       15    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\ctypes\__init__.py:398(__getitem__)
+        1    0.000    0.000    0.001    0.001 D:\Anaconda\envs\pattern\lib\multiprocessing\context.py:70(RLock)
+        1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap>:986(_find_and_load)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:761(__init__)
+       10    0.000    0.000    0.000    0.000 d:\Fall 2021\Image Processing\Project\Viola and jones Trials\ViolaAndJones\Detector.py:99(equal_rects)
+        1    0.000    0.000    0.001    0.001 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:117(create_mp_lock)
+        5    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
+       15    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:88(__getattr__)
+       16    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:513(is_set)
+        1    0.000    0.000    0.000    0.000 {destroyAllWindows}
+       15    0.000    0.000    0.000    0.000 {method 'difference' of 'set' objects}
+        2    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:222(__init__)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\_monitor.py:29(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:890(_find_spec)
+       15    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:223(_screen_shape_wrapper)
+       16    0.000    0.000    0.000    0.000 {built-in method builtins.min}
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:294(cache_from_source)
+        8    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\random.py:250(_randbelow_with_getrandbits)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:270(wait)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:68(_path_split)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:157(_get_module_lock)
+        1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap>:650(_load_unlocked)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:62(_path_join)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:540(wait)
+        2    0.000    0.000    0.000    0.000 {built-in method numpy.zeros}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:477(_init_module_attrs)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\random.py:123(seed)
+        1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap>:956(_find_and_load_unlocked)
+        8    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\random.py:285(choice)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:629(spec_from_file_location)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:578(_compile_bytecode)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:389(parent)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:834(start)
+       15    0.000    0.000    0.000    0.000 {built-in method sys.audit}
+        1    0.000    0.000    0.000    0.000 {built-in method nt.getpid}
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:114(_make_name)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:51(_unpack_uint32)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:80(_path_stat)
+        2    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\ctypes\__init__.py:391(__getattr__)
+        1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap_external>:777(exec_module)
+        1    0.000    0.000    0.000    0.000 d:\Fall 2021\Image Processing\Project\Viola and jones Trials\ViolaAndJones\Detector.py:123(<listcomp>)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:78(acquire)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:222(_verbose_message)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\tempfile.py:144(__next__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:103(release)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:493(_classify_pyc)
+        7    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:1134(__del__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1302(_get_spec)
+       10    0.000    0.000    0.000    0.000 {method 'rpartition' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:58(__init__)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:46(SemLock)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:424(_get_cached)
+        2    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:505(__init__)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\tempfile.py:147(<listcomp>)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:249(__exit__)
+        8    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1334(find_spec)
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.next}
+       15    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:1281(<lambda>)
+       10    0.000    0.000    0.000    0.000 {method 'getrandbits' of '_random.Random' objects}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1426(_get_spec)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\util.py:48(debug)
+        1    0.000    0.000    0.000    0.000 {method 'swapaxes' of 'numpy.ndarray' objects}
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:246(__enter__)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:186(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:176(cb)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:800(find_spec)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:210(Condition)
+       12    0.000    0.000    0.000    0.000 {method 'rstrip' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method _imp._fix_co_filename}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:147(__enter__)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:376(cached)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:90(_path_is_mode_type)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:456(_check_name_wrapper)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:1177(_make_invoke_excepthook)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:1306(current_thread)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:867(__exit__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:99(_path_isfile)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:526(_validate_timestamp_pyc)
+        3    0.000    0.000    0.000    0.000 {built-in method builtins.setattr}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:35(_new_module)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:36(_relax_case)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:863(__enter__)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\context.py:233(get_context)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1010(path_stats)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:1110(daemon)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\random.py:94(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:143(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:151(__exit__)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:734(_newname)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:99(<listcomp>)
+        2    0.000    0.000    0.000    0.000 {method 'setter' of 'property' objects}
+        3    0.000    0.000    0.000    0.000 {built-in method from_bytes}
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\xml\etree\ElementTree.py:551(__init__)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:90(_make_methods)
+        3    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+        2    0.000    0.000    0.000    0.000 {method 'rsplit' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:342(__init__)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:261(_is_owned)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:321(Event)
+        4    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1265(_path_importer_cache)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:255(_release_save)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:258(_acquire_restore)
+        2    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+        5    0.000    0.000    0.000    0.000 {built-in method _imp.release_lock}
+        8    0.000    0.000    0.000    0.000 {method 'bit_length' of 'int' objects}
+        5    0.000    0.000    0.000    0.000 {built-in method _imp.acquire_lock}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:211(_call_with_frames_removed)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:939(__init__)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:1095(daemon)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:123(Semaphore)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:159(Lock)
+        1    0.000    0.000    0.000    0.000 {built-in method atexit.register}
+        3    0.000    0.000    0.000    0.000 {built-in method nt.fspath}
+        1    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\context.py:197(get_start_method)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:142(BoundedSemaphore)
+        1    0.000    0.000    0.000    0.000 {method '__enter__' of '_thread.lock' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method _imp.is_frozen}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:774(create_module)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\xml\etree\ElementTree.py:557(getroot)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\process.py:37(current_process)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:184(RLock)
+        1    0.000    0.000    0.000    0.000 {method 'release' of '_thread.lock' objects}
+        1    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.lock' objects}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:397(has_location)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:725(find_spec)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:964(get_filename)
+        1    0.000    0.000    0.000    0.000 {method 'append' of 'collections.deque' objects}
+        1    0.000    0.000    0.000    0.000 {method 'clear' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 <string>:1(<module>)
+
+

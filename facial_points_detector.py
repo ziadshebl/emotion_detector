@@ -6,7 +6,7 @@ class FacialPointsDetectors:
     def initialize(self, w):
         self.detector = dlib.get_frontal_face_detector()
         #TODO:Change the path of the predictor weights file
-        self.predictor = dlib.shape_predictor("C:/Users/Ziadkamal/Desktop/Senior-2/Image Processing/Project/Emotion Detector/shape_predictor_68_face_landmarks.dat")
+        self.predictor = dlib.shape_predictor("D:\Fall 2021\Image Processing\Project\Pipeline\emotion_detector\shape_predictor_68_face_landmarks.dat")
         
 
     def detect_points(self,frame):
