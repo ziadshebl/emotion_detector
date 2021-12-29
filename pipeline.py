@@ -19,8 +19,8 @@ face_haar_cascade = face_detector.initialize_models(option = Constants.face_dete
 
 
 #Emotion Detection Initializations
-emotion_detector = EmotionDetector()
-detector = emotion_detector.initialize_models(option = 1)
+# emotion_detector = EmotionDetector()
+# detector = emotion_detector.initialize_models(option = 1)
 
 #Face Points Detection Initializatiosn
 facial_points_detector = FacialPointsDetectors()
@@ -35,9 +35,6 @@ nn_clf = Classifier("nn")
 #Reading dataset and splitting it
 x,y = DatasetReader.read_dataset("C:/Users/Ziadkamal/Desktop/Senior-2/Image Processing/Project/CreatedDataset3/")
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.25, random_state=42) 
-
-
-
 
 
 ##################################################################################################################
@@ -55,6 +52,10 @@ if(Constants.train_model):
         faces_detected = face_detector.detect_face(gray_image)
 
         for (x,y,w,h) in faces_detected:    
+            x = x-30
+            y = y-30
+            h = h+60
+            w = w+60
             cropped_gray_image = gray_image[y:y+h, x:x+w] 
             if(Constants.features_option == 0):
                 eye_mout_lbp = Features.calculate_eye_and_mouth_LBP(image, cropped_gray_image, facial_points_detector)
@@ -84,7 +85,12 @@ if(Constants.train_model):
                 aot = Features.calculate_triangles_AoT(image, facial_points_detector)
                 if(aot == None):
                     continue
-                features.append(aot)    
+                features.append(aot)
+
+
+            elif(Constants.features_option == 5):
+                
+                mo = Features.calculate_mouth_opening(image[y:y+h, x:x+w, :] ,facial_points_detector)        
             
             
 
@@ -230,10 +236,14 @@ if(Constants.use_camera_to_test):
         #Draw Triangles around the faces detected
         for (x,y,w,h) in faces_detected:
             
-            cropped_image = gray_image[y:y+h, x:x+w]
+            x=x-30
+            y=y-30
+            w=w+60
+            h=h+60
             cv2.rectangle(frame,(x,y), (x+w,y+h), (255,0,0), thickness=7)
             
-            facial_points = facial_points_detector.detect_points(frame)
+            cropped_gray_image = gray_image[y:y+h, x:x+w]
+            facial_points = facial_points_detector.detect_points(frame[y:y+h, x:x+w])
             critical_points = []
             if(len(facial_points)>0):
                 facial_points = np.array(facial_points, dtype=np.int32)
@@ -250,21 +260,21 @@ if(Constants.use_camera_to_test):
                 ]
                 
                 if(Constants.show_facial_points):
-                    for p in critical_points:
-                        cv2.circle(frame, (p[0], p[1]), 5, (255,0,0), thickness=2)
+                    for p in facial_points:
+                        cv2.circle(frame, (p[0]+x, p[1]+y), 5, (255,0,0), thickness=1)
             
-                cv2.rectangle(frame,
-                    (facial_points[Constants.mouth_point_1][0]-20,facial_points[Constants.mouth_point_1][1]-25), 
-                    (facial_points[Constants.mouth_point_3][0]+20,facial_points[Constants.mouth_point_3][1]+25), 
-                    (255,0,0),
-                    thickness=4)    
+                # cv2.rectangle(frame,
+                #     (facial_points[Constants.mouth_point_1][0]-20,facial_points[Constants.mouth_point_1][1]-25), 
+                #     (facial_points[Constants.mouth_point_3][0]+20,facial_points[Constants.mouth_point_3][1]+25), 
+                #     (255,0,0),
+                #     thickness=4)    
 
 
-                cv2.rectangle(frame,
-                    (facial_points[Constants.left_eye_point_1][0]-20,facial_points[Constants.left_eye_point_1][1]-25), 
-                    (facial_points[Constants.right_eye_point_2][0]+20,facial_points[Constants.right_eye_point_2][1]+25), 
-                    (255,0,0),
-                    thickness=4)      
+                # cv2.rectangle(frame,
+                #     (facial_points[Constants.left_eye_point_1][0]-20,facial_points[Constants.left_eye_point_1][1]-25), 
+                #     (facial_points[Constants.right_eye_point_2][0]+20,facial_points[Constants.right_eye_point_2][1]+25), 
+                #     (255,0,0),
+                #     thickness=4)      
             
             score = "None"
             emotion = "None"

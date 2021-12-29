@@ -10,13 +10,15 @@ class FacialPointsDetectors:
         
 
     def detect_points(self,frame):
+        print("START")
         faces = self.detector(frame)	
-      
+        print("Face detected")
         points = []
         for face in faces:
             landmarks = self.predictor(frame, face)
             
             for i in range(0, 68):
+                print(i)
                 point = [landmarks.part(i).x, landmarks.part(i).y]
                 points.append(point)
         

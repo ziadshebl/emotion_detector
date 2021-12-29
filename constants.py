@@ -28,8 +28,8 @@ class Constants:
     #2: Uses ICC from generated triangles
     #3: Uses ICAT from generated triangles
     #4: Uses AoT from generated triangles 
-    features_option = 1          
+    features_option = 5          
 
     #Video parameters
-    show_facial_points = False
+    show_facial_points = True
  

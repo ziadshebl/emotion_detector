@@ -1,9 +1,11 @@
 
 
+import cv2
 from constants import Constants
 from facial_points_detector import FacialPointsDetectors
 from lbp_feature_extractor import LBPFeatureExtractor
 import numpy as np
+import matplotlib.pyplot as plt
 
 from triangle import Triangle
 
@@ -127,3 +129,45 @@ class Features:
         
 
         return t1,t2,t3,t4,t5
+
+
+    @staticmethod
+    def calculate_mouth_opening(frame,facial_points_detector):
+        #TODO: Calculate n
+       
+        
+        imgYCC = cv2.cvtColor(frame, cv2.COLOR_BGR2YCR_CB)
+        facial_points = facial_points_detector.detect_points(frame)
+        
+        print("INSIDE3")
+        facial_points = np.array(facial_points, dtype=np.int32)
+        
+        print("INSIDE4")
+        top_point = facial_points[Constants.face_centre_point]
+        w,h,_ = imgYCC.shape
+        
+        imgYCC = imgYCC[top_point[1]:h, 0:w]
+        plt.imshow(imgYCC)
+        plt.show()
+        #TODO: Calculate mouthmap
+        #TODO: Summation
+        #TODO: Smooth Histogram
+        #TODO: Locate peaks
+        #TODO: Distance between peaks
+        pass
+
+    @staticmethod 
+    def calculate_eyebrow_curvature():
+        pass
+
+    @staticmethod 
+    def calculate_eyebrow_mean():
+        pass
+
+    @staticmethod
+    def calculate_wrinkles():
+        pass
+
+    @staticmethod
+    def calculate_lip_corners():
+        pass
