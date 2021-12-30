@@ -1,22 +1,24 @@
 import dlib
+import os
 import numpy as np
 from sympy import symbols, solve
 class FacialPointsDetectors:
 
-    def initialize(self, w):
+    def initialize(self):
         self.detector = dlib.get_frontal_face_detector()
-        #TODO:Change the path of the predictor weights file
-        self.predictor = dlib.shape_predictor("D:\Fall 2021\Image Processing\Project\Pipeline\emotion_detector\shape_predictor_68_face_landmarks.dat")
+        self.predictor = dlib.shape_predictor(os.path.abspath(os.curdir)+"\\shape_predictor_68_face_landmarks.dat")
         
 
     def detect_points(self,frame):
+        print("START")
         faces = self.detector(frame)	
-      
+        print("Face detected")
         points = []
         for face in faces:
             landmarks = self.predictor(frame, face)
             
             for i in range(0, 68):
+                print(i)
                 point = [landmarks.part(i).x, landmarks.part(i).y]
                 points.append(point)
         

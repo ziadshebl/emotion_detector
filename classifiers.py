@@ -1,3 +1,4 @@
+import os
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn import svm
 from sklearn.ensemble import RandomForestClassifier
@@ -19,15 +20,15 @@ class Classifier:
 
     def fit(self, x_train, y_train):
         self.clf.fit(x_train, y_train)
-        filename = self.type +'_model.sav'
+        filename = os.path.abspath(os.curdir)+'\\Classifier_Models\\' + self.type +'_model.sav'
         joblib.dump(self.clf, filename)
 
     def load_model(self):
-        filename = self.type + '_model.sav'
+        filename = os.path.abspath(os.curdir)+'\\Classifier_Models\\'+self.type + '_model.sav'
         self.clf = joblib.load(filename)
 
     def predict(self, x_test):
-        results = self.clf.predict_proba([x_test])
+        results = self.clf.predict_proba(x_test)
         return np.argmax(results),  np.amax(results)
 
     def calculate_score(self, y_test, y_predicted):
