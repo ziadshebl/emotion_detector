@@ -61,7 +61,10 @@ class Features:
         
             t1,t2,t3,t4,t5 = Features.calculate_trianglular_features(critical_points)
             feature_vector = [t1.ICC, t2.ICC, t3.ICC, t4.ICC, t5.ICC]
+            feature_vector = feature_vector / face_tuple[3]
             return feature_vector
+        else:
+            return []    
 
 
     @staticmethod
@@ -83,7 +86,10 @@ class Features:
         
             t1,t2,t3,t4,t5 = Features.calculate_trianglular_features(critical_points)
             feature_vector = [t1.ICAT, t2.ICAT, t3.ICAT, t4.ICAT, t5.ICAT]
+            feature_vector = feature_vector / face_tuple[3]
             return feature_vector
+        else:
+            return []    
 
 
 
@@ -106,7 +112,10 @@ class Features:
         
             t1,t2,t3,t4,t5 = Features.calculate_trianglular_features(critical_points)
             feature_vector = [t1.AoT, t2.AoT, t3.AoT, t4.AoT, t5.AoT]
+            feature_vector = feature_vector / face_tuple[3]
             return feature_vector
+        else:
+            return []    
 
 
     @staticmethod

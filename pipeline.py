@@ -34,9 +34,9 @@ rf_clf = Classifier("rf")
 nn_clf = Classifier("nn")
 
 #Reading dataset and splitting it
-x,y = DatasetReader.read_dataset("C:/Users/Ziadkamal/Desktop/Senior-2/Image Processing/Project/CreatedDataset3-3/")
+x,y = DatasetReader.read_dataset("C:/Users/Ziadkamal/Desktop/Senior-2/Image Processing/Project/CreatedDataset4-2/")
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.25, random_state=42) 
-emotions = ["Happiness", "Sadness", "Neutral"]
+emotions = ["Surprise","Happiness", "Sadness", "Fear"]
 
 
 ##################################################################################################################
@@ -73,23 +73,25 @@ if(Constants.train_model):
             elif(Constants.features_option == 2):
     
                 icc = Features.calculate_triangles_ICC(image, facial_points_detector, (x,y,w,h))
-                if(icc == None):
+                if(len(icc) == 0):
                     continue
+            
                 features.append(icc)
                 labels.append(label)
         
 
             elif(Constants.features_option == 3):
                 icat = Features.calculate_triangles_ICAT(image, facial_points_detector, (x,y,w,h))
-                if(icat == None):
+                if(len(icat) == 0):
                     continue
+
                 features.append(icat)
                 labels.append(label)
             
 
             elif(Constants.features_option == 4):
                 aot = Features.calculate_triangles_AoT(image, facial_points_detector, (x,y,w,h))
-                if(aot == None):
+                if(len(aot) == 0):
                     continue
                 features.append(aot)
                 labels.append(label)
@@ -101,7 +103,7 @@ if(Constants.train_model):
                 mo = Features.calculate_mouth_opening(image,facial_points_detector)        
             
             
-
+    print(np.mean(features,axis=0))
     knn_clf.fit(features, labels)
     svm_clf.fit(features, labels)
     rf_clf.fit(features, labels)
@@ -170,19 +172,19 @@ if(Constants.use_file_images_to_test):
 
         elif(Constants.features_option == 2):
             icc = Features.calculate_triangles_ICC(image, facial_points_detector, (x,y,w,h))
-            if(icc == None):
+            if(len(icc) == 0):
                 continue
             features.append(icc)
 
         elif(Constants.features_option == 3):
             icat = Features.calculate_triangles_ICAT(image, facial_points_detector, (x,y,w,h))
-            if(icat == None):
+            if(len(icat) == 0):
                 continue
             features.append(icat)    
 
         elif(Constants.features_option == 4):
             aot = Features.calculate_triangles_AoT(image, facial_points_detector, (x,y,w,h))
-            if(aot == None):
+            if(len(aot) == 0):
                 continue
             features.append(aot)                
         
@@ -273,31 +275,26 @@ if(Constants.use_camera_to_test):
 
             elif(Constants.features_option == 2):
                 icc = Features.calculate_triangles_ICC(frame, facial_points_detector, (x,y,w,h))
-                if(icc == None):
+                if(len(icc) == 0):
                     continue
                 features.append(icc)
 
             elif(Constants.features_option == 3):
                 icat = Features.calculate_triangles_ICAT(frame, facial_points_detector, (x,y,w,h))
-                if(icat == None):
+                if(len(icat) == 0):
                     continue
                 features.append(icat)    
 
             elif(Constants.features_option == 4):
                 aot = Features.calculate_triangles_AoT(frame, facial_points_detector, (x,y,w,h))
-                if(aot == None):
+                if(len(aot) == 0):
                     continue
                 features.append(aot)                
             
             rf_pred, rf_score = rf_clf.predict(features)
+           
             score = rf_score
             emotion = emotions[rf_pred]
-            
-            
-            
-            
-            
-            
             
             
             if(Constants.show_facial_points):
@@ -326,7 +323,7 @@ if(Constants.use_camera_to_test):
     
             #Write on the frame the emotion detected
             if(score):
-                cv2.putText(frame,emotion + " " + str(score),(int(x), int(y)),cv2.FONT_HERSHEY_SIMPLEX,2,(0,255,0),3)
+                cv2.putText(frame,emotion + " " + str(score),(int(x), int(y)),cv2.FONT_HERSHEY_SIMPLEX,1,(0,255,0),2)
             
         resize_image = cv2.resize(frame, (1000, 700))
         cv2.imshow('Emotion',resize_image)
