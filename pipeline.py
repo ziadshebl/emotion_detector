@@ -34,9 +34,9 @@ rf_clf = Classifier("rf")
 nn_clf = Classifier("nn")
 
 #Reading dataset and splitting it
-x,y = DatasetReader.read_dataset("C:/Users/Ziadkamal/Desktop/Senior-2/Image Processing/Project/CreatedDataset4-2/")
+x,y = DatasetReader.read_dataset("C:/Users/Ziadkamal/Desktop/Senior-2/Image Processing/Project/CreatedDataset4-5/")
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.25, random_state=42) 
-emotions = ["Surprise","Happiness", "Sadness", "Fear"]
+emotions = ["Surprise","Happiness", "Sadness", "Disgust"]
 
 
 ##################################################################################################################
