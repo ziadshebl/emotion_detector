@@ -1,27 +1,25 @@
 import dlib
 import os
 import numpy as np
+import matplotlib.pyplot as plt
 from sympy import symbols, solve
 class FacialPointsDetectors:
 
     def initialize(self):
-        self.detector = dlib.get_frontal_face_detector()
+        #self.detector = dlib.get_frontal_face_detector()
+        #self.detector = dlib.cnn_face_detection_model_v1(os.path.abspath(os.curdir)+"\\mmod_human_face_detector.dat")
         self.predictor = dlib.shape_predictor(os.path.abspath(os.curdir)+"\\shape_predictor_68_face_landmarks.dat")
         
 
-    def detect_points(self,frame):
-        print("START")
-        faces = self.detector(frame)	
-        print("Face detected")
+    def detect_points(self,frame,face):
+        #faces = self.detector(frame)
         points = []
-        for face in faces:
-            landmarks = self.predictor(frame, face)
-            
-            for i in range(0, 68):
-                print(i)
-                point = [landmarks.part(i).x, landmarks.part(i).y]
-                points.append(point)
-        
+        face = dlib.rectangle(face[0], face[1], face[0] + face[2], face[1]+face[3])
+        landmarks = self.predictor(frame, face)                   
+        for i in range(0, 68):
+            point = [landmarks.part(i).x, landmarks.part(i).y]
+            points.append(point)
+    
         return points
 
 

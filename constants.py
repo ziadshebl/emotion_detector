@@ -12,10 +12,10 @@ class Constants:
 
 
     #Pipeline parameters
-    train_model = True
-    load_model = False
-    use_file_images_to_test = True
-    use_camera_to_test = False
+    train_model = False
+    load_model = True
+    use_file_images_to_test = False
+    use_camera_to_test = True
 
 
     #Face detector parameters
@@ -28,8 +28,8 @@ class Constants:
     #2: Uses ICC from generated triangles
     #3: Uses ICAT from generated triangles
     #4: Uses AoT from generated triangles 
-    features_option = 5          
+    features_option = 2      
 
     #Video parameters
-    show_facial_points = True
+    show_facial_points = False
  

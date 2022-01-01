@@ -11,6 +11,7 @@ from features import Features
 from processing import Processing
 from Dataset_Handler.dataset_reader import DatasetReader
 from sklearn.model_selection import train_test_split
+import matplotlib.pyplot as plt
 from classifiers import Classifier
 
 #Face Detection Initializtions
@@ -33,8 +34,9 @@ rf_clf = Classifier("rf")
 nn_clf = Classifier("nn")
 
 #Reading dataset and splitting it
-x,y = DatasetReader.read_dataset("C:/Users/Ziadkamal/Desktop/Senior-2/Image Processing/Project/CreatedDataset3/")
+x,y = DatasetReader.read_dataset("C:/Users/Ziadkamal/Desktop/Senior-2/Image Processing/Project/CreatedDataset3-3/")
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.25, random_state=42) 
+emotions = ["Happiness", "Sadness", "Neutral"]
 
 
 ##################################################################################################################
@@ -45,52 +47,58 @@ if(Constants.train_model):
     labels = []
     for image, label in tqdm(zip(x_train,y_train), total = len(x_train)):
         
-        labels.append(label)
         #Change the frame to greyscale  
         gray_image= Processing.preprocessing(image)
         #We pass the image, scaleFactor and minneighbour
         faces_detected = face_detector.detect_face(gray_image)
 
         for (x,y,w,h) in faces_detected:    
-            x = x-30
-            y = y-30
-            h = h+60
-            w = w+60
             cropped_gray_image = gray_image[y:y+h, x:x+w] 
             if(Constants.features_option == 0):
-                eye_mout_lbp = Features.calculate_eye_and_mouth_LBP(image, cropped_gray_image, facial_points_detector)
-                if(eye_mout_lbp == None):
+                eye_mout_lbp = Features.calculate_eye_and_mouth_LBP(image, cropped_gray_image, facial_points_detector, (x,y,w,h))
+                if(len(eye_mout_lbp) < 1):
                     continue
                 features.append(eye_mout_lbp)
+                labels.append(label)
+        
             
             elif(Constants.features_option == 1):
                 face_lbp = Features.calculate_face_LBP(cropped_gray_image)
                 if(len(face_lbp) == 0):
                     continue
                 features.append(face_lbp)
+                labels.append(label)
+        
 
             elif(Constants.features_option == 2):
-                icc = Features.calculate_triangles_ICC(image, facial_points_detector)
+    
+                icc = Features.calculate_triangles_ICC(image, facial_points_detector, (x,y,w,h))
                 if(icc == None):
                     continue
                 features.append(icc)
+                labels.append(label)
+        
 
             elif(Constants.features_option == 3):
-                icat = Features.calculate_triangles_ICAT(image, facial_points_detector)
+                icat = Features.calculate_triangles_ICAT(image, facial_points_detector, (x,y,w,h))
                 if(icat == None):
                     continue
-                features.append(icat)    
+                features.append(icat)
+                labels.append(label)
+            
 
             elif(Constants.features_option == 4):
-                aot = Features.calculate_triangles_AoT(image, facial_points_detector)
+                aot = Features.calculate_triangles_AoT(image, facial_points_detector, (x,y,w,h))
                 if(aot == None):
                     continue
                 features.append(aot)
+                labels.append(label)
 
 
             elif(Constants.features_option == 5):
                 
-                mo = Features.calculate_mouth_opening(image[y:y+h, x:x+w, :] ,facial_points_detector)        
+                #mo = Features.calculate_mouth_opening(image[y:y+h, x:x+w, :] ,facial_points_detector)  
+                mo = Features.calculate_mouth_opening(image,facial_points_detector)        
             
             
 
@@ -128,6 +136,7 @@ if(Constants.load_model):
 ##################################### Start of testing from file #################################################
 ##################################################################################################################
 if(Constants.use_file_images_to_test):
+    rf_misclassifications = []
     knn_predictions = []
     svm_predictions = []
     rf_predictions = []
@@ -147,8 +156,8 @@ if(Constants.use_file_images_to_test):
 
         features = [] 
         if(Constants.features_option == 0):
-            eye_mout_lbp = Features.calculate_eye_and_mouth_LBP(image, cropped_gray_image, facial_points_detector)
-            if(eye_mout_lbp == None):
+            eye_mout_lbp = Features.calculate_eye_and_mouth_LBP(image, cropped_gray_image, facial_points_detector, (x,y,w,h))
+            if(len(eye_mout_lbp) < 1):
                 continue
             
             features.append(eye_mout_lbp)
@@ -160,19 +169,19 @@ if(Constants.use_file_images_to_test):
             features.append(face_lbp)
 
         elif(Constants.features_option == 2):
-            icc = Features.calculate_triangles_ICC(image, facial_points_detector)
+            icc = Features.calculate_triangles_ICC(image, facial_points_detector, (x,y,w,h))
             if(icc == None):
                 continue
             features.append(icc)
 
         elif(Constants.features_option == 3):
-            icat = Features.calculate_triangles_ICAT(image, facial_points_detector)
+            icat = Features.calculate_triangles_ICAT(image, facial_points_detector, (x,y,w,h))
             if(icat == None):
                 continue
             features.append(icat)    
 
         elif(Constants.features_option == 4):
-            aot = Features.calculate_triangles_AoT(image, facial_points_detector)
+            aot = Features.calculate_triangles_AoT(image, facial_points_detector, (x,y,w,h))
             if(aot == None):
                 continue
             features.append(aot)                
@@ -185,6 +194,8 @@ if(Constants.use_file_images_to_test):
         svm_predictions.append(svm_pred)
         
         rf_pred, rf_score = rf_clf.predict(features)
+        if(rf_pred != label):
+            rf_misclassifications.append((rf_pred, label))
         rf_predictions.append(rf_pred)
 
         nn_pred, rf_score = nn_clf.predict(features)
@@ -195,6 +206,7 @@ if(Constants.use_file_images_to_test):
     svm_clf.calculate_score(svm_predictions,y_test)
     rf_clf.calculate_score(rf_predictions,y_test)
     nn_clf.calculate_score(nn_predictions,y_test)
+    print(rf_misclassifications)
 
 
 
@@ -233,64 +245,85 @@ if(Constants.use_camera_to_test):
         #We pass the image, scaleFactor and minneighbour
         faces_detected = face_detector.detect_face(gray_image)
         
-        #Draw Triangles around the faces detected
+       
         for (x,y,w,h) in faces_detected:
-            
-            x=x-30
-            y=y-30
-            w=w+60
-            h=h+60
-            cv2.rectangle(frame,(x,y), (x+w,y+h), (255,0,0), thickness=7)
-            
-            cropped_gray_image = gray_image[y:y+h, x:x+w]
-            facial_points = facial_points_detector.detect_points(frame[y:y+h, x:x+w])
-            critical_points = []
-            if(len(facial_points)>0):
-                facial_points = np.array(facial_points, dtype=np.int32)
-                critical_points = [
-                    facial_points[Constants.left_eye_point_1],
-                    facial_points[Constants.left_eye_point_2],
-                    facial_points[Constants.right_eye_point_1],
-                    facial_points[Constants.right_eye_point_2],
-                    facial_points[Constants.mouth_point_1],
-                    facial_points[Constants.mouth_point_2],
-                    facial_points[Constants.mouth_point_3],
-                    facial_points[Constants.mouth_point_4],
-                    facial_points[Constants.face_centre_point]
-                ]
-                
-                if(Constants.show_facial_points):
-                    for p in facial_points:
-                        cv2.circle(frame, (p[0]+x, p[1]+y), 5, (255,0,0), thickness=1)
-            
-                # cv2.rectangle(frame,
-                #     (facial_points[Constants.mouth_point_1][0]-20,facial_points[Constants.mouth_point_1][1]-25), 
-                #     (facial_points[Constants.mouth_point_3][0]+20,facial_points[Constants.mouth_point_3][1]+25), 
-                #     (255,0,0),
-                #     thickness=4)    
-
-
-                # cv2.rectangle(frame,
-                #     (facial_points[Constants.left_eye_point_1][0]-20,facial_points[Constants.left_eye_point_1][1]-25), 
-                #     (facial_points[Constants.right_eye_point_2][0]+20,facial_points[Constants.right_eye_point_2][1]+25), 
-                #     (255,0,0),
-                #     thickness=4)      
             
             score = "None"
             emotion = "None"
-            # if(len(critical_points)>0):
-            #     t1, t2, t3, t4, t5 = emotion_detector.calculate_trianglular_features(critical_points)
-            #     feature_vector = [t1.ICC, t2.ICC, t3.ICC, t4.ICC, t5.ICC] 
-            #     rf_pred, rf_score = rf_clf.predict(feature_vector)
-            #     score = rf_score
+
+            #Draw rectangle around face detected
+            cv2.rectangle(frame,(x,y), (x+w,y+h), (255,0,0), thickness=3)
             
-            #     if((rf_pred) == 0):
-            #         emotion = "Surprised"
-            #     elif(int(rf_pred) == 1):
-            #         emotion = "Happy"
-            #     else:
-            #         emotion = "Sad"
+            #Cropping the image to face only image
+            cropped_gray_image = gray_image[y:y+h, x:x+w] 
+
+            features = [] 
+            if(Constants.features_option == 0):
+                eye_mout_lbp = Features.calculate_eye_and_mouth_LBP(frame, cropped_gray_image, facial_points_detector, (x,y,w,h))
+                if(len(eye_mout_lbp) < 1):
+                    continue
+                
+                features.append(eye_mout_lbp)
+            
+            elif(Constants.features_option == 1):
+                face_lbp = Features.calculate_face_LBP(cropped_gray_image)
+                if(len(face_lbp) == 0):
+                    continue
+                features.append(face_lbp)
+
+            elif(Constants.features_option == 2):
+                icc = Features.calculate_triangles_ICC(frame, facial_points_detector, (x,y,w,h))
+                if(icc == None):
+                    continue
+                features.append(icc)
+
+            elif(Constants.features_option == 3):
+                icat = Features.calculate_triangles_ICAT(frame, facial_points_detector, (x,y,w,h))
+                if(icat == None):
+                    continue
+                features.append(icat)    
+
+            elif(Constants.features_option == 4):
+                aot = Features.calculate_triangles_AoT(frame, facial_points_detector, (x,y,w,h))
+                if(aot == None):
+                    continue
+                features.append(aot)                
+            
+            rf_pred, rf_score = rf_clf.predict(features)
+            score = rf_score
+            emotion = emotions[rf_pred]
+            
+            
+            
+            
+            
+            
+            
+            
+            if(Constants.show_facial_points):
+                
+                facial_points = facial_points_detector.detect_points(frame, frame[y:y+h, x:x+w])
+                critical_points = []
+                if(len(facial_points)>0):
+                    facial_points = np.array(facial_points, dtype=np.int32)
+                    critical_points = [
+                        facial_points[Constants.left_eye_point_1],
+                        facial_points[Constants.left_eye_point_2],
+                        facial_points[Constants.right_eye_point_1],
+                        facial_points[Constants.right_eye_point_2],
+                        facial_points[Constants.mouth_point_1],
+                        facial_points[Constants.mouth_point_2],
+                        facial_points[Constants.mouth_point_3],
+                        facial_points[Constants.mouth_point_4],
+                        facial_points[Constants.face_centre_point]
+                    ]
+                    
+                    for p in facial_points:
+                        cv2.circle(frame, (p[0]+x, p[1]+y), 5, (255,0,0), thickness=1)
+            
         
+
+    
             #Write on the frame the emotion detected
             if(score):
                 cv2.putText(frame,emotion + " " + str(score),(int(x), int(y)),cv2.FONT_HERSHEY_SIMPLEX,2,(0,255,0),3)
@@ -298,7 +331,7 @@ if(Constants.use_camera_to_test):
         resize_image = cv2.resize(frame, (1000, 700))
         cv2.imshow('Emotion',resize_image)
         if cv2.waitKey(10) == ord('b'):
-                break
+            break
                 
                 
     cap.release()
