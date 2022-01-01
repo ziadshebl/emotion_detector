@@ -37,7 +37,7 @@ nn_clf = Classifier("nn")
 if(Constants.train_model or Constants.use_file_images_to_test):
     x,y = DatasetReader.read_dataset("C:/Users/Ziadkamal/Desktop/Senior-2/Image Processing/Project/CreatedDataset3-3/")
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.25, random_state=42) 
-emotions = ["Surprise","Happiness", "Sadness", "Fear"]
+emotions = ["Surprise","Happiness", "Sadness", "Disgust"]
 
 
 ##################################################################################################################

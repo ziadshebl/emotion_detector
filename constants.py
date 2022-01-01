@@ -12,9 +12,9 @@ class Constants:
 
 
     #Pipeline parameters
-    train_model = False
-    load_model = True
-    use_file_images_to_test = False
+    train_model = True
+    load_model = False
+    use_file_images_to_test = True
     use_camera_to_test = True
 
 
