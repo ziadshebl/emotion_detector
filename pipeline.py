@@ -34,8 +34,9 @@ rf_clf = Classifier("rf")
 nn_clf = Classifier("nn")
 
 #Reading dataset and splitting it
-x,y = DatasetReader.read_dataset("C:/Users/Ziadkamal/Desktop/Senior-2/Image Processing/Project/CreatedDataset3-3/")
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.25, random_state=42) 
+if(Constants.train_model or Constants.use_file_images_to_test):
+    x,y = DatasetReader.read_dataset("C:/Users/Ziadkamal/Desktop/Senior-2/Image Processing/Project/CreatedDataset3-3/")
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.25, random_state=42) 
 emotions = ["Happiness", "Sadness", "Neutral"]
 
 
@@ -119,6 +120,7 @@ if(Constants.train_model):
 ##################################################################################################################
 
 if(Constants.load_model):
+    print("Ana henaaaaaaaq")
     knn_clf.load_model()
     svm_clf.load_model()
     rf_clf.load_model()
@@ -339,4 +341,65 @@ if(Constants.use_camera_to_test):
 
 ##################################################################################################################
 ##################################### End of testing from camera ###############################################
-##################################################################################################################              
+##################################################################################################################   
+if(Constants.use_image_to_test):
+    image_path="D:/Fall 2021/Image Processing/Project/Pipeline/emotion_detector/Images/1_4.jpg"
+    frame = cv2.imread(image_path)
+    gray_image= Processing.preprocessing(frame)
+    faces_detected = face_detector.detect_face(gray_image)
+    print(faces_detected)
+    for (x,y,w,h) in faces_detected:
+        score = "None"
+        emotion = "None"
+        #Draw rectangle around face detected
+        cv2.rectangle(frame,(x,y), (x+w,y+h), (255,0,0), thickness=3)
+        
+        #Cropping the image to face only image
+        cropped_gray_image = gray_image[y:y+h, x:x+w] 
+
+        features = [] 
+        if(Constants.features_option == 0):
+            eye_mout_lbp = Features.calculate_eye_and_mouth_LBP(frame, cropped_gray_image, facial_points_detector, (x,y,w,h))
+            if(len(eye_mout_lbp) < 1):
+                continue
+            
+            features.append(eye_mout_lbp)
+        
+        elif(Constants.features_option == 1):
+            face_lbp = Features.calculate_face_LBP(cropped_gray_image)
+            if(len(face_lbp) == 0):
+                continue
+            features.append(face_lbp)
+
+        elif(Constants.features_option == 2):
+            icc = Features.calculate_triangles_ICC(frame, facial_points_detector, (x,y,w,h))
+            if(icc == None):
+                continue
+            features.append(icc)
+
+        elif(Constants.features_option == 3):
+            icat = Features.calculate_triangles_ICAT(frame, facial_points_detector, (x,y,w,h))
+            if(icat == None):
+                continue
+            features.append(icat)    
+
+        elif(Constants.features_option == 4):
+            aot = Features.calculate_triangles_AoT(frame, facial_points_detector, (x,y,w,h))
+            if(aot == None):
+                continue
+            features.append(aot)                
+        
+        rf_pred, rf_score = rf_clf.predict(features)
+        score = rf_score
+        emotion = emotions[rf_pred]
+        print(rf_pred)
+        #Write on the frame the emotion detected
+        if(score):
+            cv2.putText(frame,emotion + " " + str(score),(int(x), int(y)),cv2.FONT_HERSHEY_SIMPLEX,2,(0,255,0),3)
+    frame = cv2.resize(frame, (512,512))
+    cv2.imshow('Emotion',frame)
+    cv2.waitKey()
+##################################################################################################################
+##################################### End of test image ########################################################
+################################################################################################################## 
+ 
