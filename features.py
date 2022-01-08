@@ -13,17 +13,17 @@ from triangle import Triangle
 class Features:
 
     @staticmethod
-    def calculate_eye_and_mouth_LBP(image, gray_image, facial_points_detector):
-        facial_points = facial_points_detector.detect_points(image)
+    def calculate_eye_and_mouth_LBP(image, cropped_gray_image, facial_points_detector, face_tuple):
+        facial_points = facial_points_detector.detect_points(image, face_tuple)
         if(len(facial_points)==0):
-            return None
+            return []
             
-        mouth_region = gray_image[
+        mouth_region = cropped_gray_image[
             facial_points[Constants.mouth_point_1][1]-20:facial_points[Constants.mouth_point_3][1]+40, 
             facial_points[Constants.mouth_point_1][0]-20:facial_points[Constants.mouth_point_3][0]+20, 
         ]
         
-        eye_region = gray_image[
+        eye_region = cropped_gray_image[
             facial_points[Constants.left_eye_point_1][1]-50:facial_points[Constants.right_eye_point_2][1]+50, 
             facial_points[Constants.left_eye_point_1][0]-25:facial_points[Constants.right_eye_point_2][0]+25, 
         ]
@@ -43,8 +43,8 @@ class Features:
    
    
     @staticmethod
-    def calculate_triangles_ICC(image, facial_points_detector):
-        facial_points = facial_points_detector.detect_points(image)
+    def calculate_triangles_ICC(image, facial_points_detector, face_tuple):
+        facial_points = facial_points_detector.detect_points(image, face_tuple)
         if(len(facial_points)>0):
             facial_points = np.array(facial_points, dtype=np.int32)
             critical_points = [
@@ -61,12 +61,15 @@ class Features:
         
             t1,t2,t3,t4,t5 = Features.calculate_trianglular_features(critical_points)
             feature_vector = [t1.ICC, t2.ICC, t3.ICC, t4.ICC, t5.ICC]
+            feature_vector = feature_vector / face_tuple[3]
             return feature_vector
+        else:
+            return []    
 
 
     @staticmethod
-    def calculate_triangles_ICAT(image, facial_points_detector):
-        facial_points = facial_points_detector.detect_points(image)
+    def calculate_triangles_ICAT(image, facial_points_detector, face_tuple):
+        facial_points = facial_points_detector.detect_points(image,face_tuple)
         if(len(facial_points)>0):
             facial_points = np.array(facial_points, dtype=np.int32)
             critical_points = [
@@ -83,13 +86,16 @@ class Features:
         
             t1,t2,t3,t4,t5 = Features.calculate_trianglular_features(critical_points)
             feature_vector = [t1.ICAT, t2.ICAT, t3.ICAT, t4.ICAT, t5.ICAT]
+            feature_vector = feature_vector / face_tuple[3]
             return feature_vector
+        else:
+            return []    
 
 
 
     @staticmethod
-    def calculate_triangles_AoT(image, facial_points_detector):
-        facial_points = facial_points_detector.detect_points(image)
+    def calculate_triangles_AoT(image, facial_points_detector, face_tuple):
+        facial_points = facial_points_detector.detect_points(image, face_tuple)
         if(len(facial_points)>0):
             facial_points = np.array(facial_points, dtype=np.int32)
             critical_points = [
@@ -106,7 +112,10 @@ class Features:
         
             t1,t2,t3,t4,t5 = Features.calculate_trianglular_features(critical_points)
             feature_vector = [t1.AoT, t2.AoT, t3.AoT, t4.AoT, t5.AoT]
+            feature_vector = feature_vector / face_tuple[3]
             return feature_vector
+        else:
+            return []    
 
 
     @staticmethod
@@ -147,8 +156,6 @@ class Features:
         w,h,_ = imgYCC.shape
         
         imgYCC = imgYCC[top_point[1]:h, 0:w]
-        plt.imshow(imgYCC)
-        plt.show()
         #TODO: Calculate mouthmap
         #TODO: Summation
         #TODO: Smooth Histogram
