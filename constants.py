@@ -54,5 +54,5 @@ class Constants:
     use_lda = False
 
     #Video parameters
-    show_facial_points = True
+    show_facial_points = False
  
