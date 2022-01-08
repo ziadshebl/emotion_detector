@@ -36,12 +36,12 @@ nn_clf = Classifier("nn")
 lda_clf = Classifier("lda")
 
 #Reading dataset and splitting it
-x,y = DatasetReader.read_dataset("C:/Users/Ziadkamal/Desktop/Senior-2/Image Processing/Project/CreatedDataset2/")
+x,y = DatasetReader.read_dataset("C:/Users/Ziadkamal/Desktop/Senior-2/Image Processing/Project/CreatedDataset7/")
 print("Dataset Loaded")
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.25, random_state=42) 
 print("Number of training images:", len(x_train))
 print("Number of testing images:", len(x_test))
-emotions = ["Happiness", "Sadness", "Disgust","Anger", "Fear"]
+emotions = ["Surpries","Happiness", "Sadness", "Disgust","Anger", "Fear", "Neutral"]
 
 
 ##################################################################################################################
