@@ -1,4 +1,6 @@
 Classifier_Models/*
 Dataset_Handler/*
 Face_Detector/__pycache__/*
+Face_Detector/Hog/__pycache__/*
+Face_Detector/Viola_and_jones/__pycache__/*
 __pycache__/*
