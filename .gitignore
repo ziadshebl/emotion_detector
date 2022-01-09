@@ -1,3 +1,4 @@
-Classifier_Models/
-Dataset_Handler/
-__pycache__/
+Classifier_Models/*
+Dataset_Handler/*
+Face_Detector/__pycache__/*
+__pycache__/*
