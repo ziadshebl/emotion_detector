@@ -1,6 +1,3 @@
-import numpy as np
-
-
 class Feature:
 
     def __init__(self,rects, threshold, left_val, right_val, size):

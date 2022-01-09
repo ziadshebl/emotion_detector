@@ -1,5 +1,4 @@
 import cv2
-import numpy as np
 
 image = cv2.imread("Face_Detector/Viola_and_jones/Images/1.jpg")
 face_cascade = cv2.CascadeClassifier("Face_Detector/Viola_and_jones/haarcascade_frontalface_default.xml")

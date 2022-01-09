@@ -45,47 +45,82 @@ class Detector:
 		self.size=size
 
 	def detect(self,original_image,base_scale,scale_increment,increment,min_neighbors,resizing_scale,canny):
+		#Clearing detections
 		self.detections.clear()
+		
+		#Resizing image with resize scale to decrease computational time
 		original_image=cv2.resize(original_image,( int(original_image.shape[1]/resizing_scale),int(original_image.shape[0]/resizing_scale)))
 		original_image=original_image.swapaxes(0,1)
 		height=original_image.shape[1]
 		width=original_image.shape[0]
+
+		#Calculating canny edges and calculating integral image to use in speeding up calcilations
 		if(canny):
 			edges = feature.canny(original_image, sigma=4)
 			edge=edges.astype('uint8')
 			canny_integral, _ = cv2.integral2(edge)
 			canny_integral=canny_integral[1:,1:,]
+		
+		#Calculating integral image on image 
 		integral, integral_squared = cv2.integral2(original_image)
+		#Slicing the first row and column to remove zeroes
 		integral=integral[1:,1:,]
 		integral_squared=integral_squared[1:,1:,]
+
+		#Calculating maximum scale of window to iterate with by dividing the width and height with the sizes provided from xml file
 		max_scale = min((width+0.0)/self.size['x'], (height+0.0)/self.size['y'])
+		
+		#The start of the scal is with the base scale
 		scale=base_scale
+		
+		#While i didnt reach the maximum scale i keep increasing and sliding with this window
 		while scale<max_scale:
+
+			#Calculating the step
 			step= int(scale*self.size['x']*increment)
+			#Calculating the size of window
 			size=int(scale*self.size['x'])
 			w=int(scale*self.size['x'])
 			h=w
+
+			#Calculating the inverse of the area.
 			inv_area=1/(w*h)
+
+
 			for i in tqdm(range(0,width-size,step)):
 				for j in range(0,height-size,step):
+
+					#I check for canny edges and calculate edge densities at this region w.r.t the window size area
 					if(canny):
 						edges_density = canny_integral[i + size][j + size] + canny_integral[i][j] - canny_integral[i][j + size]- canny_integral[i + size][j]					
 						d = edges_density / (size * size)
 						if(d<0.02):
 							continue
+					
+					#At this step i will calclate the mean and sigma of the window size to remove any effect of lighting conditions(Variace normalizatin)
+
+					#Getting the summation of the pixels from integral image and integral image squared
 					total_x = integral[i+w,j+h]+integral[i,j] -integral[i,j+h]-integral[i+w,j]
 					total_x2=integral_squared[i+w,j+h]+integral_squared[i,j]-integral_squared[i,j+h]-integral_squared[i+w,j]
-					moy = total_x*inv_area
-					vnorm = total_x2*inv_area-moy*moy
-					if(vnorm>1):
-						vnorm=sqrt(vnorm)
+					
+					#The sum of total pixels divided by area of window
+					mean = total_x*inv_area
+
+					#Calculating sigma of image
+					sigma = total_x2*inv_area-mean*mean
+					
+					if(sigma>1):
+						sigma=sqrt(sigma)
 					else:
-						vnorm=1
+						sigma=1
 					complete=True
+					
+					#For each window I pass through each stage and compute features 
 					for stage in self.stages:
-						if(not stage.compute(integral, i, j, scale,inv_area,vnorm)):
+						if(not stage.compute(integral, i, j, scale,inv_area,sigma)):
 							complete=False
 							break
+					
 					if(complete):
 							#print("Detected face with edge density= ",edges_density," and d= ",d,"With size ", size)
 							# self.detections.append(Rectangle(i, j, size, size))  
