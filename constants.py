@@ -1,3 +1,6 @@
+from cv2 import resizeWindow
+
+
 class Constants:
     #These numbers represent the index of the point in the array returned from Dlib 
     left_eye_point_1 = 17
@@ -12,14 +15,24 @@ class Constants:
 
 
     #Pipeline parameters
-    train_model = False
+    train_and_test_model = False
     load_model = True
-    use_file_images_to_test = False
-    use_camera_to_test = True
+    test_images_from_dataset = False
+    test_images_from_test_directory = False
+    use_webcam_to_test = True
+    use_mobile_cam_to_test = False
 
+
+
+    #Mobile Camera Url
+    mobile_camera_url = "http://192.168.1.117:8080/video"
+
+
+    #Test File Path
+    test_cases_directory = 'Images/Hog/'
 
     #Face detector parameters
-    face_detector_option = 0        # 0 -> library     1 -> handmade
+    face_detector_option =  0       # 0 -> library     1 -> handmade viola & Jones       2 -> handmade hog
 
 
     #Features Option
@@ -28,8 +41,28 @@ class Constants:
     #2: Uses ICC from generated triangles
     #3: Uses ICAT from generated triangles
     #4: Uses AoT from generated triangles 
-    features_option = 2      
+    #6: Uses gabor filters
+    features_option = 6  
+
+    #Gabour Parameters
+    resize_scale = (80,60)
+    scales = [x for x in range(3,12,2)]
+    number_of_orientations = 4
+
+    #Classifiers
+    use_knn = False
+    use_svm = True
+    use_rf = False
+    use_nn = False
+    use_lda = False
 
     #Video parameters
     show_facial_points = False
- 
+
+    #Viola and jones
+    base_scale=5
+    scale_increment=1.25
+    increment=0.1
+    min_neighbors=1
+    resizing_scale=1
+    canny=True

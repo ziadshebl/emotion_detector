@@ -6,13 +6,10 @@ from sympy import symbols, solve
 class FacialPointsDetectors:
 
     def initialize(self):
-        #self.detector = dlib.get_frontal_face_detector()
-        #self.detector = dlib.cnn_face_detection_model_v1(os.path.abspath(os.curdir)+"\\mmod_human_face_detector.dat")
         self.predictor = dlib.shape_predictor(os.path.abspath(os.curdir)+"\\shape_predictor_68_face_landmarks.dat")
         
 
     def detect_points(self,frame,face):
-        #faces = self.detector(frame)
         points = []
         face = dlib.rectangle(face[0], face[1], face[0] + face[2], face[1]+face[3])
         landmarks = self.predictor(frame, face)                   

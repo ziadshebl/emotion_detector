@@ -1,0 +1,382 @@
+Sun Jan  9 16:40:04 2022    Face_Detector/Viola_and_jones/output.dat
+
+         1207220 function calls (1206955 primitive calls) in 11.619 seconds
+
+   Ordered by: call count
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+   516758    0.403    0.000    6.812    0.000 d:\Fall 2021\Image Processing\Project\Pipeline\emotion_detector\Face_Detector\Viola_and_jones\Tree.py:8(compute)
+   516758    6.409    0.000    6.409    0.000 d:\Fall 2021\Image Processing\Project\Pipeline\emotion_detector\Face_Detector\Viola_and_jones\Feature.py:17(compute)
+    57207    0.019    0.000    0.026    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:321(<genexpr>)
+    56664    0.007    0.000    0.007    0.000 {built-in method unicodedata.east_asian_width}
+    17292    0.283    0.000    7.094    0.000 d:\Fall 2021\Image Processing\Project\Pipeline\emotion_detector\Face_Detector\Viola_and_jones\Stage.py:8(compute)
+     6056    0.004    0.000    0.004    0.000 {built-in method math.sqrt}
+     3813    0.000    0.000    0.000    0.000 {built-in method builtins.ord}
+     1308    0.003    0.000    0.099    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:1147(__iter__)
+     1223    0.003    0.000    0.004    0.000 {method 'format' of 'str' objects}
+     1194    0.001    0.000    0.001    0.000 {built-in method time.time}
+     1188    0.001    0.000    0.001    0.000 {built-in method builtins.isinstance}
+     1037    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+  979/763    0.001    0.000    0.001    0.000 {built-in method builtins.getattr}
+      739    0.000    0.000    0.000    0.000 {built-in method builtins.divmod}
+      730    0.001    0.000    0.001    0.000 {built-in method builtins.hasattr}
+      698    0.001    0.000    0.001    0.000 {method 'finditer' of 're.Pattern' objects}
+      543    0.001    0.000    0.035    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:320(_text_width)
+      543    0.001    0.000    0.036    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:324(disp_len)
+      543    0.001    0.000    0.001    0.000 {method 'sub' of 're.Pattern' objects}
+      543    0.008    0.000    0.034    0.000 {built-in method builtins.sum}
+      506    0.001    0.000    0.066    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:141(inner)
+      458    0.001    0.000    0.001    0.000 {method 'flush' of '_io.TextIOWrapper' objects}
+      456    0.001    0.000    0.001    0.000 {built-in method numpy.array}
+      444    0.000    0.000    0.000    0.000 {built-in method builtins.issubclass}
+      398    0.000    0.000    0.000    0.000 {method 'acquire' of '_thread.RLock' objects}
+      398    0.000    0.000    0.000    0.000 {method 'release' of '_thread.RLock' objects}
+      397    0.001    0.000    0.002    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:103(acquire)
+      397    0.002    0.000    0.003    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:107(release)
+      397    0.001    0.000    0.001    0.000 {method 'acquire' of '_multiprocessing.SemLock' objects}
+      397    0.001    0.000    0.001    0.000 {method 'release' of '_multiprocessing.SemLock' objects}
+      372    0.000    0.000    0.001    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\_asarray.py:14(asarray)
+      362    0.001    0.000    0.002    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:214(_is_ascii)
+      362    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+      360    0.000    0.000    0.001    0.000 D:\Anaconda\envs\pattern\lib\site-packages\colorama\ansitowin32.py:28(__getattr__)
+      349    0.001    0.000    0.071    0.000 D:\Anaconda\envs\pattern\lib\site-packages\colorama\ansitowin32.py:40(write)
+      349    0.001    0.000    0.070    0.000 D:\Anaconda\envs\pattern\lib\site-packages\colorama\ansitowin32.py:160(write)
+      349    0.002    0.000    0.069    0.000 D:\Anaconda\envs\pattern\lib\site-packages\colorama\ansitowin32.py:177(write_and_convert)
+      349    0.001    0.000    0.064    0.000 D:\Anaconda\envs\pattern\lib\site-packages\colorama\ansitowin32.py:193(write_plain_text)
+      349    0.002    0.000    0.003    0.000 D:\Anaconda\envs\pattern\lib\site-packages\colorama\ansitowin32.py:245(convert_osc)
+      325    0.000    0.000    0.000    0.000 {built-in method builtins.abs}
+      294    0.001    0.000    0.001    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:233(__call__)
+      288    0.000    0.000    0.002    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:111(__enter__)
+      288    0.000    0.000    0.002    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:114(__exit__)
+      279    0.001    0.000    0.002    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:288(format_interval)
+      277    0.062    0.000    0.062    0.000 {method 'write' of '_io.TextIOWrapper' objects}
+      264    0.040    0.000    0.042    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+      217    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
+      216    0.001    0.000    0.002    0.000 D:\Anaconda\envs\pattern\lib\_weakrefset.py:58(__iter__)
+      216    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:228(__init__)
+      216    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:101(wrapper_setattr)
+      216    0.000    0.000    0.001    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:163(__eq__)
+      216    0.000    0.000    0.001    0.000 {method 'remove' of 'set' objects}
+      181    0.001    0.000    0.001    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:154(__init__)
+      181    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:164(colour)
+      181    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:168(colour)
+      181    0.001    0.000    0.001    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:187(__format__)
+      181    0.001    0.000    0.041    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:339(fp_write)
+      181    0.001    0.000    0.057    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:345(print_status)
+      181    0.006    0.000    0.037    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:352(format_meter)
+      181    0.001    0.000    0.040    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:1137(__repr__)
+      181    0.002    0.000    0.002    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:1421(format_dict)
+      181    0.001    0.000    0.098    0.001 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:1436(display)
+      181    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:57(__init__)
+      181    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:61(__format__)
+      181    0.000    0.000    0.016    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:332(disp_trim)
+      181    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
+      168    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\numerictypes.py:286(issubclass_)
+      156    0.001    0.000    0.002    0.000 D:\Anaconda\envs\pattern\lib\site-packages\scipy\ndimage\_ni_support.py:68(_get_output)
+      144    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\_weakrefset.py:16(__init__)
+      144    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\_weakrefset.py:20(__enter__)
+      144    0.000    0.000    0.001    0.000 D:\Anaconda\envs\pattern\lib\_weakrefset.py:26(__exit__)
+      144    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\_weakrefset.py:52(_commit_removals)
+      144    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:1140(_comparable)
+      144    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:1144(__hash__)
+      144    0.001    0.000    0.026    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:1266(fp_write)
+      144    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:136(disable_on_exception)
+      144    0.000    0.000    0.000    0.000 {built-in method builtins.id}
+      132    0.001    0.000    0.001    0.000 {built-in method numpy.arange}
+      132    0.005    0.000    0.005    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+      120    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\lib\type_check.py:206(_is_type_dispatcher)
+      120    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\lib\type_check.py:279(iscomplexobj)
+      120    0.000    0.000    0.001    0.000 <__array_function__ internals>:2(iscomplexobj)
+      120    0.000    0.000    0.000    0.000 {built-in method numpy.core._multiarray_umath.normalize_axis_index}
+      119    0.001    0.000    0.072    0.001 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:1249(close)
+      109    0.001    0.000    0.061    0.001 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:1305(refresh)
+      108    0.000    0.000    0.001    0.000 D:\Anaconda\envs\pattern\lib\site-packages\scipy\ndimage\_ni_support.py:52(_normalize_sequence)
+       98    0.000    0.000    0.000    0.000 {built-in method now}
+       96    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\scipy\ndimage\filters.py:50(_invalid_origin)
+       96    0.002    0.000    0.282    0.003 D:\Anaconda\envs\pattern\lib\site-packages\scipy\ndimage\filters.py:54(correlate1d)
+       96    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\scipy\ndimage\_ni_support.py:35(_extend_mode_to_code)
+       96    0.278    0.003    0.278    0.003 {built-in method scipy.ndimage._nd_image.correlate1d}
+       84    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\numerictypes.py:360(issubdtype)
+       84    0.000    0.000    0.000    0.000 {built-in method builtins.min}
+       83    0.000    0.000    0.000    0.000 {built-in method utcfromtimestamp}
+       76    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1017(_handle_fromlist)
+       73    0.000    0.000    0.001    0.000 D:\Anaconda\envs\pattern\lib\_weakrefset.py:81(add)
+       73    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:513(is_set)
+       72    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\abc.py:96(__instancecheck__)
+       72    0.001    0.000    0.001    0.000 D:\Anaconda\envs\pattern\lib\ctypes\__init__.py:47(create_string_buffer)
+       72    0.000    0.000    0.001    0.000 D:\Anaconda\envs\pattern\lib\_weakrefset.py:106(remove)
+       72    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:329(status_printer)
+       72    0.001    0.000    0.005    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:559(__new__)
+       72    0.000    0.000    0.001    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:578(<genexpr>)
+       72    0.001    0.000    0.002    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:575(_get_free_pos)
+       72    0.001    0.000    0.004    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:582(_decr_instances)
+       72    0.000    0.000    0.001    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:656(get_lock)
+       72    0.004    0.000    0.060    0.001 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:839(__init__)
+       72    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:1281(<lambda>)
+       72    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:74(__eq__)
+       72    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:88(__getattr__)
+       72    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:105(__init__)
+       72    0.001    0.000    0.002    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:154(__init__)
+       72    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:193(_is_utf)
+       72    0.000    0.000    0.001    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:207(_supports_unicode)
+       72    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:223(_screen_shape_wrapper)
+       72    0.009    0.000    0.011    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\utils.py:238(_screen_shape_windows)
+       72    0.002    0.000    0.002    0.000 {built-in method numpy.zeros}
+       72    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x00007FF90AEAB810}
+       72    0.000    0.000    0.000    0.000 {built-in method _abc._abc_instancecheck}
+       72    0.000    0.000    0.000    0.000 {built-in method _struct.unpack}
+       72    0.000    0.000    0.000    0.000 {method 'difference' of 'set' objects}
+       72    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
+       72    0.000    0.000    0.000    0.000 {built-in method sys.audit}
+       71    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\_monitor.py:92(report)
+       60    0.000    0.000    0.000    0.000 {method 'copy' of 'numpy.ndarray' objects}
+       48    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\numerictypes.py:232(obj2sctype)
+       48    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\fromnumeric.py:71(<dictcomp>)
+       48    0.000    0.000    0.001    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\fromnumeric.py:70(_wrapreduction)
+       48    0.000    0.000    0.001    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\_methods.py:45(_sum)
+       48    0.012    0.000    0.012    0.000 D:\Anaconda\envs\pattern\lib\site-packages\skimage\util\dtype.py:176(_convert)
+       48    0.000    0.000    0.013    0.000 D:\Anaconda\envs\pattern\lib\site-packages\skimage\util\dtype.py:426(img_as_float)
+       48    0.002    0.000    0.003    0.000 D:\Anaconda\envs\pattern\lib\site-packages\scipy\ndimage\filters.py:136(_gaussian_kernel1d)
+       48    0.001    0.000    0.209    0.004 D:\Anaconda\envs\pattern\lib\site-packages\scipy\ndimage\filters.py:167(gaussian_filter1d)
+       48    0.000    0.000    0.001    0.000 {method 'sum' of 'numpy.ndarray' objects}
+       48    0.000    0.000    0.000    0.000 {built-in method numpy.empty}
+       48    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+       47    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:1134(__del__)
+       37    0.001    0.000    0.024    0.001 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:1183(update)
+       36    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\_asarray.py:86(asanyarray)
+       36    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\lib\stride_tricks.py:260(<genexpr>)
+       36    0.000    0.000    0.000    0.000 {method 'ravel' of 'numpy.ndarray' objects}
+     26/2    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\abc.py:100(__subclasscheck__)
+     26/2    0.000    0.000    0.000    0.000 {built-in method _abc._abc_subclasscheck}
+       24    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\multiarray.py:852(bincount)
+       24    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\multiarray.py:1043(copyto)
+       24    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\multiarray.py:75(empty_like)
+       24    0.000    0.000    0.001    0.000 <__array_function__ internals>:2(empty_like)
+       24    0.000    0.000    0.038    0.002 <__array_function__ internals>:2(bincount)
+       24    0.000    0.000    0.001    0.000 <__array_function__ internals>:2(copyto)
+       24    0.000    0.000    0.001    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\numeric.py:144(ones)
+       24    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\_dtype.py:24(_kind_name)
+       24    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\_dtype.py:307(_name_includes_bit_suffix)
+       24    0.000    0.000    0.001    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\_dtype.py:321(_name_get)
+       24    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\fromnumeric.py:2245(_any_dispatcher)
+       24    0.000    0.000    0.001    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\fromnumeric.py:2249(any)
+       24    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\_methods.py:53(_any)
+       24    0.000    0.000    0.001    0.000 <__array_function__ internals>:2(any)
+       24    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\getlimits.py:498(__init__)
+       24    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\skimage\util\dtype.py:77(<genexpr>)
+       24    0.003    0.000    0.228    0.010 D:\Anaconda\envs\pattern\lib\site-packages\skimage\feature\_canny.py:179(fsmooth)
+       24    0.000    0.000    0.011    0.000 D:\Anaconda\envs\pattern\lib\site-packages\skimage\_shared\utils.py:308(convert_to_float)
+       24    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\scipy\ndimage\filters.py:294(<listcomp>)
+       24    0.001    0.000    0.210    0.009 D:\Anaconda\envs\pattern\lib\site-packages\scipy\ndimage\filters.py:220(gaussian_filter)
+       24    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\scipy\ndimage\filters.py:374(<listcomp>)
+       24    0.001    0.000    0.080    0.003 D:\Anaconda\envs\pattern\lib\site-packages\scipy\ndimage\filters.py:343(sobel)
+       24    0.001    0.000    0.224    0.009 D:\Anaconda\envs\pattern\lib\site-packages\skimage\filters\_gaussian.py:12(gaussian)
+       24    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\skimage\filters\_gaussian.py:129(_guess_spatial_dimensions)
+       24    0.021    0.001    0.021    0.001 {integral2}
+       24    0.023    0.001    0.023    0.001 {resize}
+       24    0.009    0.000    0.009    0.000 {method 'astype' of 'numpy.ndarray' objects}
+       24    0.000    0.000    0.000    0.000 {method 'reshape' of 'numpy.ndarray' objects}
+       24    0.000    0.000    0.000    0.000 {method 'any' of 'numpy.generic' objects}
+       20    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+       17    0.000    0.000    0.000    0.000 {method 'getrandbits' of '_random.Random' objects}
+       16    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+       13    0.000    0.000    0.000    0.000 {built-in method builtins.next}
+       12    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\multiarray.py:1340(may_share_memory)
+       12    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(may_share_memory)
+       12    0.000    0.000    0.001    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\numeric.py:1653(indices)
+       12    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\numeric.py:1816(isscalar)
+       12    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\fromnumeric.py:2333(_all_dispatcher)
+       12    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\fromnumeric.py:2337(all)
+       12    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\fromnumeric.py:2876(_prod_dispatcher)
+       12    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\fromnumeric.py:2881(prod)
+       12    0.000    0.000    0.001    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\_methods.py:37(_amax)
+       12    0.000    0.000    0.002    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\_methods.py:41(_amin)
+       12    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(all)
+       12    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(prod)
+       12    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\getlimits.py:366(__new__)
+       12    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\getlimits.py:509(min)
+       12    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\core\getlimits.py:522(max)
+       12    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\lib\index_tricks.py:727(__getitem__)
+       12    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\lib\stride_tricks.py:183(_broadcast_shape)
+       12    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\lib\stride_tricks.py:200(_broadcast_arrays_dispatcher)
+       12    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\lib\stride_tricks.py:256(<listcomp>)
+       12    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\numpy\lib\stride_tricks.py:204(broadcast_arrays)
+       12    0.000    0.000    0.000    0.000 <__array_function__ internals>:2(broadcast_arrays)
+       12    0.000    0.000    0.023    0.002 D:\Anaconda\envs\pattern\lib\site-packages\imutils\convenience.py:65(resize)
+       12    0.156    0.013    8.244    0.687 d:\Fall 2021\Image Processing\Project\Pipeline\emotion_detector\Face_Detector\Viola_and_jones\Detector.py:47(detect)
+       12    0.000    0.000    0.000    0.000 d:\Fall 2021\Image Processing\Project\Pipeline\emotion_detector\Face_Detector\Viola_and_jones\Detector.py:96(open_cv_merge)
+       12    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\skimage\util\dtype.py:35(dtype_limits)
+       12    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\skimage\util\dtype.py:57(_dtype_itemsize)
+       12    0.032    0.003    0.268    0.022 D:\Anaconda\envs\pattern\lib\site-packages\skimage\feature\_canny.py:23(smooth_with_function_and_mask)
+       12    0.364    0.030    0.802    0.067 D:\Anaconda\envs\pattern\lib\site-packages\skimage\feature\_canny.py:53(canny)
+       12    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\skimage\_shared\utils.py:256(check_nD)
+       12    0.000    0.000    0.013    0.001 D:\Anaconda\envs\pattern\lib\site-packages\scipy\ndimage\measurements.py:44(label)
+       12    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\scipy\ndimage\measurements.py:459(_safely_castable_to_int)
+       12    0.001    0.000    0.043    0.004 D:\Anaconda\envs\pattern\lib\site-packages\scipy\ndimage\measurements.py:467(_stats)
+       12    0.000    0.000    0.043    0.004 D:\Anaconda\envs\pattern\lib\site-packages\scipy\ndimage\measurements.py:574(sum)
+       12    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\scipy\ndimage\morphology.py:50(<listcomp>)
+       12    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\scipy\ndimage\morphology.py:48(_center_is_true)
+       12    0.000    0.000    0.001    0.000 D:\Anaconda\envs\pattern\lib\site-packages\scipy\ndimage\morphology.py:124(generate_binary_structure)
+       12    0.000    0.000    0.032    0.003 D:\Anaconda\envs\pattern\lib\site-packages\scipy\ndimage\morphology.py:215(_binary_erosion)
+       12    0.000    0.000    0.032    0.003 D:\Anaconda\envs\pattern\lib\site-packages\scipy\ndimage\morphology.py:293(binary_erosion)
+       12    0.001    0.000    0.001    0.000 {cvtColor}
+       12    0.000    0.000    0.000    0.000 {groupRectangles}
+       12    0.046    0.004    0.046    0.004 {imshow}
+       12    0.097    0.008    0.097    0.008 {waitKey}
+       12    0.000    0.000    0.000    0.000 {method 'isOpened' of 'cv2.VideoCapture' objects}
+       12    0.977    0.081    0.977    0.081 {method 'read' of 'cv2.VideoCapture' objects}
+       12    0.000    0.000    0.001    0.000 {method 'max' of 'numpy.ndarray' objects}
+       12    0.000    0.000    0.002    0.000 {method 'min' of 'numpy.ndarray' objects}
+       12    0.000    0.000    0.000    0.000 {method 'swapaxes' of 'numpy.ndarray' objects}
+       12    0.012    0.001    0.012    0.001 {built-in method scipy.ndimage._ni_label._label}
+       12    0.000    0.000    0.000    0.000 {built-in method _operator.index}
+       12    0.000    0.000    0.000    0.000 {method 'clear' of 'list' objects}
+       12    0.000    0.000    0.000    0.000 {method 'rstrip' of 'str' objects}
+       12    0.000    0.000    0.000    0.000 {built-in method builtins.all}
+       12    0.000    0.000    0.005    0.000 {built-in method builtins.print}
+       12    0.031    0.003    0.031    0.003 {built-in method scipy.ndimage._nd_image.binary_erosion}
+       10    0.000    0.000    0.000    0.000 {method 'rpartition' of 'str' objects}
+        9    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\_collections_abc.py:392(__subclasshook__)
+        8    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\random.py:250(_randbelow_with_getrandbits)
+        8    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\random.py:285(choice)
+        8    0.000    0.000    0.000    0.000 {method 'bit_length' of 'int' objects}
+        8    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+        8    0.000    0.000    0.000    0.000 {built-in method builtins.__build_class__}
+        7    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\_collections_abc.py:302(__subclasshook__)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:222(_verbose_message)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:389(parent)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:64(<listcomp>)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:62(_path_join)
+        5    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\_collections_abc.py:72(_check_methods)
+        5    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
+        5    0.000    0.000    0.000    0.000 {built-in method _imp.acquire_lock}
+        5    0.000    0.000    0.000    0.000 {built-in method _imp.release_lock}
+        4    0.000    0.000    0.000    0.000 {rectangle}
+        4    0.000    0.000    0.000    0.000 {method 'acquire' of '_thread.lock' objects}
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:51(_unpack_uint32)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:863(__enter__)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:867(__exit__)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:80(_path_stat)
+        3    0.000    0.000    0.000    0.000 {built-in method nt.stat}
+        3    0.000    0.000    0.000    0.000 {built-in method nt.fspath}
+        3    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+        3    0.000    0.000    0.000    0.000 {built-in method from_bytes}
+        3    0.000    0.000    0.000    0.000 {built-in method builtins.setattr}
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:376(cached)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:68(_path_split)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:294(cache_from_source)
+        2    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\ctypes\__init__.py:391(__getattr__)
+        2    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\ctypes\__init__.py:398(__getitem__)
+        2    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:222(__init__)
+        2    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:505(__init__)
+        2    0.000    0.000    0.000    0.000 {method 'setter' of 'property' objects}
+        2    0.000    0.000    0.000    0.000 {method 'rsplit' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+      2/1    0.000    0.000   11.619   11.619 {built-in method builtins.exec}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:35(_new_module)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:58(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:78(acquire)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:103(release)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:36(_relax_case)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:143(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:147(__enter__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:151(__exit__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:176(cb)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:157(_get_module_lock)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:211(_call_with_frames_removed)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:342(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:397(has_location)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:477(_init_module_attrs)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:549(module_from_spec)
+        1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap>:650(_load_unlocked)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:725(find_spec)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:800(find_spec)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:890(_find_spec)
+        1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap>:956(_find_and_load_unlocked)
+        1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap>:986(_find_and_load)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:90(_path_is_mode_type)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:99(_path_isfile)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:424(_get_cached)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:456(_check_name_wrapper)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:493(_classify_pyc)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:526(_validate_timestamp_pyc)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:578(_compile_bytecode)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:629(spec_from_file_location)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:774(create_module)
+        1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap_external>:777(exec_module)
+        1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap_external>:849(get_code)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:939(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:964(get_filename)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:969(get_data)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1010(path_stats)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1265(_path_importer_cache)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1302(_get_spec)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1334(find_spec)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1426(_get_spec)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1431(find_spec)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\_collections_abc.py:252(__subclasshook__)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\_collections_abc.py:271(__subclasshook__)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\_collections_abc.py:349(__subclasshook__)
+        1    1.428    1.428   11.618   11.618 d:\Fall 2021\Image Processing\Project\Pipeline\emotion_detector\Viola_and_Jones_Main.py:27(real_time_main)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:246(__enter__)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:249(__exit__)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:255(_release_save)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:258(_acquire_restore)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:261(_is_owned)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:270(wait)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:540(wait)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:734(_newname)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:761(__init__)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:834(start)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:1095(daemon)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:1110(daemon)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:1177(_make_invoke_excepthook)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\threading.py:1306(current_thread)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\random.py:94(__init__)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\random.py:123(seed)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\tempfile.py:133(rng)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\tempfile.py:144(__next__)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\tempfile.py:147(<listcomp>)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:99(<listcomp>)
+        1    0.000    0.000    0.001    0.001 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:91(__init__)
+        1    0.000    0.000    0.001    0.001 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\std.py:117(create_mp_lock)
+        1    0.000    0.000    0.001    0.001 D:\Anaconda\envs\pattern\lib\site-packages\tqdm\_monitor.py:29(__init__)
+        1    0.000    0.000    0.001    0.001 D:\Anaconda\envs\pattern\lib\multiprocessing\context.py:70(RLock)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\context.py:197(get_start_method)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\context.py:233(get_context)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\process.py:37(current_process)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\util.py:48(debug)
+        1    0.001    0.001   11.619   11.619 <string>:1(<module>)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:50(__init__)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:90(_make_methods)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:114(_make_name)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:210(Condition)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:321(Event)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:360(Barrier)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:11(<module>)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:46(SemLock)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:123(Semaphore)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:142(BoundedSemaphore)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:159(Lock)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:186(__init__)
+        1    0.000    0.000    0.000    0.000 D:\Anaconda\envs\pattern\lib\multiprocessing\synchronize.py:184(RLock)
+        1    0.027    0.027    0.027    0.027 {destroyAllWindows}
+        1    0.770    0.770    0.770    0.770 {method 'release' of 'cv2.VideoCapture' objects}
+        1    0.000    0.000    0.000    0.000 {method 'append' of 'collections.deque' objects}
+        1    0.000    0.000    0.000    0.000 {function Random.seed at 0x000001F4E0C7F040}
+        1    0.000    0.000    0.000    0.000 {built-in method atexit.register}
+        1    0.000    0.000    0.000    0.000 {built-in method nt.getpid}
+        1    0.000    0.000    0.000    0.000 {method 'release' of '_thread.lock' objects}
+        1    0.000    0.000    0.000    0.000 {method '__enter__' of '_thread.lock' objects}
+        1    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.lock' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method _thread.start_new_thread}
+        1    0.000    0.000    0.000    0.000 {method 'read' of '_io.BufferedReader' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method io.open_code}
+        1    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method _imp.is_frozen}
+        1    0.000    0.000    0.000    0.000 {built-in method _imp._fix_co_filename}
+        1    0.000    0.000    0.000    0.000 {built-in method marshal.loads}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
