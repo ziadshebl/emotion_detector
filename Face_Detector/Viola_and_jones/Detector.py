@@ -36,7 +36,7 @@ class Detector:
 					rects = []
 					for rect in tree[0][0]:
 						rects.append(Rect(rect.text))
-					temp_features.append(Feature(rects=rects ,threshold=tree[1].text, left_val=tree[2].text, left_node=-1, has_left_val=True,right_val=tree[3].text, right_node=-1, has_right_val=True, size=size))
+					temp_features.append(Feature(rects=rects ,threshold=tree[1].text, left_val=tree[2].text,right_val=tree[3].text,size=size))
 					temp_trees.append(Tree(temp_features))
 					temp_features=[]
 			stages.append(Stage(threshold=stage[1].text, trees=temp_trees))

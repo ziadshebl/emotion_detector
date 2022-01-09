@@ -3,15 +3,11 @@ import numpy as np
 
 class Feature:
 
-    def __init__(self,rects, threshold, left_val, left_node, has_left_val, right_val, right_node, has_right_val, size):
+    def __init__(self,rects, threshold, left_val, right_val, size):
         self.rects=rects
         self.threshold=eval(threshold)
         self.left_val = eval(left_val)
-        self.left_node = int(left_node)
-        self.has_left_val = has_left_val
         self.right_val = eval(right_val)
-        self.right_node = int(right_node)
-        self.has_right_val = has_right_val
         self.size = size
 
     def compute(self,gray_image,i,j,scale,inverse_area,vnorm):
