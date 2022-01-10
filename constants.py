@@ -32,7 +32,7 @@ class Constants:
     test_cases_directory = 'Images/Hog/'
 
     #Face detector parameters
-    face_detector_option =  0       # 0 -> library     1 -> handmade viola & Jones       2 -> handmade hog
+    face_detector_option =  1       # 0 -> library     1 -> handmade viola & Jones       2 -> handmade hog
 
 
     #Features Option
