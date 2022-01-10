@@ -16,6 +16,11 @@ from facial_points_detector import FacialPointsDetectors
 from lbp_feature_extractor import LBPFeatureExtractor
 import numpy as np
 import matplotlib.pyplot as plt
+from skimage.filters import sobel, threshold_otsu
+from skimage import feature
+from skimage.morphology import dilation, opening, erosion
+from scipy.signal import argrelextrema
+from sklearn import cluster
 
 from triangle import Triangle
 
@@ -166,6 +171,22 @@ class Features:
         return frame
 
     @staticmethod
+    def crop_face(frame, facial_points_detector, face_tuple):
+        facial_points = facial_points_detector.detect_points(frame, face_tuple)
+        facial_points = np.array(facial_points, dtype=np.int32)
+
+        frame = frame[:,facial_points[0][0] if facial_points[0][0]>0 else 0 :facial_points[15][0]]
+        h,width,_ = frame.shape
+        width = width/2
+
+        for i in range(frame.shape[0]):
+            for j in range(frame.shape[1]):
+                if ((j - width)**2 / width **2 + (i- (h//2))**2 / (h/2)**2) >=1:
+                    frame[i,j] = 255
+
+        return frame
+
+    @staticmethod
     def detect_mouth(frame):
         frame = cv2.resize(frame,( 381, 281))
         # imgYCC = np.array(imgYCC[:,:,0], dtype=np.int32)
@@ -214,26 +235,106 @@ class Features:
         fig.set_size_inches(np.array(fig.get_size_inches()) * n_ims)
         plt.show() 
 
+    @staticmethod
+    def detect_mouth_by_contours(frame,facial_points_detector, face_tuple):
+        facial_points = facial_points_detector.detect_points(frame, face_tuple)             
+        
+        facial_points = np.array(facial_points, dtype=np.int32)      
+        top_point = facial_points[Constants.face_centre_point]
+        mouth = np.array(frame[top_point[1]:, :,:], dtype = np.int16)
 
+        gray_img = cv2.cvtColor(mouth.astype("uint8"), cv2.COLOR_BGR2GRAY)
+        sobl = cv2.Canny(gray_img, 80,100)
+
+        # edged = sobel(gray)
+        # edged = cv2.dilate(edged, None)
+        th = threshold_otsu(np.abs(sobl))
+        edged = sobl > th
+        edged = edged.astype('uint8')
+        edged = cv2.dilate(edged, None)
+
+        plt.imshow(edged)
+        plt.show()
+
+        contours, hierarchy = cv2.findContours(edged.astype("uint8"), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        img = mouth.copy()
+        # cv2.drawContours(img, contours, -1, (0,255,0), 3)
+        # plt.imshow(img)
+        # plt.show()
+        for cnt in contours:
+            rect = cv2.minAreaRect(cnt)
+            box = np.int0(cv2.boxPoints(rect))
+            x, y, w, h = cv2.boundingRect(cnt)
+            _, start, _, end = box
+            w = np.abs(end[0] - start[0])
+            h = np.abs(end[1] - start[1])
+            # print(top_point[0])
+            # print(start, end)
+            # w = 0
+            if x < top_point[0] and x+w > top_point[0] and w >80:
+
+                #Sort the cnt by the X vals
+                points = cnt[np.argsort(cnt[:, 0, 0]), :]
+                print( points.shape ,points[0], points[-1])
+                # h represents the opening of the mouth 
+                # w represents the distance between the mouth corners
+                return h, w
+                
+
+    @staticmethod
+    def detect_mouth_using_YCbCr(frame):
+        imgYCC = cv2.cvtColor(frame, cv2.COLOR_BGR2YCR_CB)
+        w,h,_ = imgYCC.shape
+        img_new = np.zeros((w, h))
+        histY = np.histogram(imgYCC[:,:,0])
+        if np.argmax(histY[0])>4 :
+            minVal = histY[1][np.argmax(histY[0])-4]
+            imgYCC[imgYCC[:,:,0]<minVal,0] = 0
+        if np.argmax(histY[0])<6:
+            maxVal = histY[1][np.argmax(histY[0])+6]
+            imgYCC[imgYCC[:,:,0]>maxVal,0] = 0
+        
+        histCr = np.histogram(imgYCC[:,:,1])
+        if np.argmax(histCr[0])>4 :
+            minVal = histCr[1][np.argmax(histCr[0])-4]
+            imgYCC[imgYCC[:,:,1]<minVal,1] = 0
+        if np.argmax(histCr[0])<6:
+            maxVal = histCr[1][np.argmax(histCr[0])+6]
+            imgYCC[imgYCC[:,:,1]>maxVal,1] = 0
+        histCb = np.histogram(imgYCC[:,:,2])
+        if np.argmax(histCr[0])>4 :
+            minVal = histCb[1][np.argmax(histCb[0])-4]
+            imgYCC[imgYCC[:,:,2]<minVal,2] = 0
+        if np.argmax(histCb[0])<6:
+            maxVal = histCb[1][np.argmax(histCb[0])+6]
+            imgYCC[imgYCC[:,:,2]>maxVal,2] = 0
+        cond = (imgYCC[:,:,0]>90) & (imgYCC[:,:,0]<180) & (imgYCC[:,:,1]>80) & (imgYCC[:,:,1]<150) & (imgYCC[:,:,2]>90) & (imgYCC[:,:,2]<130)
+        img_new[cond] = 255
+        dilated = dilation(img_new)
+        eroded = erosion(dilated)
+        # imgYCC[ (imgYCC[:,:,0]<=90) | (imgYCC[:,:,0]>=180) | (imgYCC[:,:,1]<=90) | (imgYCC[:,:,1]>=130) | (imgYCC[:,:,2]<=90) | (imgYCC[:,:,2]>=150)] = 0
+        # imgYCC[(imgYCC[:,:,0]>90) & (imgYCC[:,:,0]<180) & (imgYCC[:,:,1]>90) & (imgYCC[:,:,1]<130) & (imgYCC[:,:,2]>90) & (imgYCC[:,:,2]>150)] = 0
+        # contours, hierarchy = cv2.findContours(img_new.astype("uint8"), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        # img = imgYCC.copy()
+        # cv2.drawContours(img, contours, -1, (0,255,0), 3)
+        print(np.max(imgYCC), np.min(imgYCC))
+        plt.imshow(imgYCC.astype("uint8"))
+        plt.show()
+        
+
+    
 
     @staticmethod
     def calculate_mouth_opening(frame,facial_points_detector, face_tuple):
         #TODO: Calculate n
-       
-        
-        imgYCC = cv2.cvtColor(frame, cv2.COLOR_BGR2YCR_CB)
         facial_points = facial_points_detector.detect_points(frame, face_tuple)
                 
         
         facial_points = np.array(facial_points, dtype=np.int32)
         
         top_point = facial_points[Constants.face_centre_point]
-        
-        print(np.linalg.norm(facial_points[15] - facial_points[0]))
-        
-        w,h,_ = imgYCC.shape
-        print(frame.shape, top_point)
-        
+        imgYCC = cv2.cvtColor(frame, cv2.COLOR_BGR2YCR_CB)
+        # print(frame.shape, top_point)
         imgYCC = np.array(imgYCC[top_point[1]:, :], dtype=np.int32)
         print(imgYCC.shape)
         # Calculate mouthmap
@@ -247,9 +348,9 @@ class Features:
         edge_sobel = np.abs(sobel(mouthmap))
         opening_img = opening(edge_sobel)
         opening_img = erosion(opening_img)
-        print("MAXXX", np.unravel_index(np.argmax(opening_img, axis=None), opening_img.shape), np.max(opening_img))
+        # print("MAXXX", np.unravel_index(np.argmax(opening_img, axis=None), opening_img.shape), np.max(opening_img))
         max_val = np.max(opening_img)
-        threshold = 0.5
+        threshold = 0.75
         opening_img[opening_img<threshold* max_val] = 0
         opening_img[opening_img>threshold * max_val] = 255
 
@@ -269,8 +370,11 @@ class Features:
         fig.set_size_inches(np.array(fig.get_size_inches()) * n_ims)
         plt.show() 
 
-        contours, hierarchy = cv2.findContours(image, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-        cv2.drawContours(image, contours, -1, (0,255,0), 3)
+        contours, hierarchy = cv2.findContours(opening_img.astype("uint8"), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        img = imgYCC.copy()
+        cv2.drawContours(img, contours, -1, (0,255,0), 3)
+        # plt.imshow(img)
+        # plt.show()
         for cnt in contours:
             rect = cv2.minAreaRect(cnt)
             box = np.int0(cv2.boxPoints(rect))
@@ -279,11 +383,10 @@ class Features:
             h = np.abs(end[1] - start[1])
             # print(start, end)
             if w > h and w > 100:
+                
                 print(box)
 
-
-
-
+        
 
         # imgYCC = cv2.cvtColor(opening_img.astype('uint8') * 255, cv2.COLOR_GRAY2BGR)
         print(opening_img.shape)
@@ -293,22 +396,14 @@ class Features:
         hist = np.sum(edge_sobel, axis = 1)
         print(hist.shape)
 
-        plt.plot(range(len(hist)), hist)
-        plt.show()
+        # plt.plot(range(len(hist)), hist)
+        # plt.show()
 
 
-        plt.imshow(opening_img)
-        plt.show()
+        # plt.imshow(opening_img)
+        # plt.show()
         local_maximas = argrelextrema(hist, np.greater)
-        # print(local_maximas)
-        
         print(mouthmap.shape)
-        # mouthmap = cv2.cvtColor(mouthmap, cv2.COLOR_YCR_CB2RGB)
-        #TODO: Summation
-        #TODO: Smooth Histogram
-        #TODO: Locate peaks
-        #TODO: Distance between peaks
-        pass
 
     @staticmethod 
     def calculate_eyebrow_curvature(frame,facial_points_detector, face_tuple):
@@ -393,4 +488,3 @@ class Features:
         # Perform canny edge detection technique on it
         canny_detected = cv2.Canny(gray_img, 80,100)
         return np.sum(canny_detected)
-
